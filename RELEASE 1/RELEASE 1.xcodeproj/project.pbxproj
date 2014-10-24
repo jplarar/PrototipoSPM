@@ -15,6 +15,7 @@
 		C13276BC19FA2D2B00A411A6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C13276BB19FA2D2B00A411A6 /* Images.xcassets */; };
 		C13276BF19FA2D2B00A411A6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C13276BD19FA2D2B00A411A6 /* LaunchScreen.xib */; };
 		C13276CB19FA2D2B00A411A6 /* RELEASE_1Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = C13276CA19FA2D2B00A411A6 /* RELEASE_1Tests.m */; };
+		C13276D619FA2E8300A411A6 /* ConnectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C13276D519FA2E8300A411A6 /* ConnectionsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		C13276C419FA2D2B00A411A6 /* RELEASE 1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RELEASE 1Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C13276C919FA2D2B00A411A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C13276CA19FA2D2B00A411A6 /* RELEASE_1Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RELEASE_1Tests.m; sourceTree = "<group>"; };
+		C13276D419FA2E8300A411A6 /* ConnectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionsViewController.h; sourceTree = "<group>"; };
+		C13276D519FA2E8300A411A6 /* ConnectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +97,8 @@
 				C13276BB19FA2D2B00A411A6 /* Images.xcassets */,
 				C13276BD19FA2D2B00A411A6 /* LaunchScreen.xib */,
 				C13276AB19FA2D2B00A411A6 /* Supporting Files */,
+				C13276D419FA2E8300A411A6 /* ConnectionsViewController.h */,
+				C13276D519FA2E8300A411A6 /* ConnectionsViewController.m */,
 			);
 			path = "RELEASE 1";
 			sourceTree = "<group>";
@@ -224,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C13276D619FA2E8300A411A6 /* ConnectionsViewController.m in Sources */,
 				C13276B719FA2D2B00A411A6 /* SecondViewController.m in Sources */,
 				C13276B119FA2D2B00A411A6 /* AppDelegate.m in Sources */,
 				C13276B419FA2D2B00A411A6 /* FirstViewController.m in Sources */,
