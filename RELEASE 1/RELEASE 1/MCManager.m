@@ -21,7 +21,10 @@
 //
 //You should have received a copy of the GNU General Public License
 //along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
-
+//
+// Code retrived from Gabriel Theodoropoulos tutorial
+// <http://www.appcoda.com/intro-multipeer-connectivity-framework-ios-programming/>
+//
 
 #import "MCManager.h"
 
