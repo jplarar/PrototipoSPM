@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import <MultipeerConnectivity/MultipeerConnectivity.h>
-#import "AppDelegate.h"
-
 
 @interface ConnectionsViewController : UIViewController <MCBrowserViewControllerDelegate, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource>
 
@@ -17,12 +15,12 @@
 @property (weak, nonatomic) IBOutlet UISwitch *swVisible;
 @property (weak, nonatomic) IBOutlet UITableView *tblConnectedDevices;
 @property (weak, nonatomic) IBOutlet UIButton *btnDisconnect;
-@property (nonatomic, strong) AppDelegate *appDelegate;
 
 - (IBAction)browseForDevices:(id)sender;
 - (IBAction)toggleVisibility:(id)sender;
 - (IBAction)disconnect:(id)sender;
 
 @end
+
 
 
