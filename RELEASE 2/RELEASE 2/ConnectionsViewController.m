@@ -7,6 +7,7 @@
 //
 //  Fecha de creación: 10/24/14
 //  Fecha de última actualización: 11/17/14
+//  Descripción general: Almacena las variables a utilizar para la coneccion
 //
 //  Copyright (c) 2014 ITESM. All rights reserved.
 //
@@ -42,13 +43,34 @@
 //  Andrés López De León        <agldeleon@gmail.com>
 //
 
-#import <UIKit/UIKit.h>
-#import "MCManager.h"
+#import "ConnectionsViewController.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface ConnectionsViewController ()
 
-@property (strong, nonatomic) UIWindow *window;
+@end
 
-@property (nonatomic, strong) MCManager *mcManager;
+@implementation ConnectionsViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end

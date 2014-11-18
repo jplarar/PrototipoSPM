@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C12EF4061A1ADBBD0053C202 /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = C12EF4041A1ADBBD0053C202 /* green.png */; };
 		C12EF4071A1ADBBD0053C202 /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = C12EF4051A1ADBBD0053C202 /* red.png */; };
+		C12EF43F1A1B0A2D0053C202 /* joinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C12EF43E1A1B0A2D0053C202 /* joinViewController.m */; };
 		C13276AE19FA2D2B00A411A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C13276AD19FA2D2B00A411A6 /* main.m */; };
 		C13276B119FA2D2B00A411A6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C13276B019FA2D2B00A411A6 /* AppDelegate.m */; };
 		C13276B419FA2D2B00A411A6 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C13276B319FA2D2B00A411A6 /* TestViewController.m */; };
@@ -33,6 +34,8 @@
 /* Begin PBXFileReference section */
 		C12EF4041A1ADBBD0053C202 /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green.png; sourceTree = "<group>"; };
 		C12EF4051A1ADBBD0053C202 /* red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red.png; sourceTree = "<group>"; };
+		C12EF43D1A1B0A2D0053C202 /* joinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = joinViewController.h; sourceTree = "<group>"; };
+		C12EF43E1A1B0A2D0053C202 /* joinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = joinViewController.m; sourceTree = "<group>"; };
 		C13276A819FA2D2B00A411A6 /* RELEASE 1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RELEASE 1.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C13276AC19FA2D2B00A411A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C13276AD19FA2D2B00A411A6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -105,6 +108,8 @@
 				C13276D519FA2E8300A411A6 /* ConnectionsViewController.m */,
 				C13276D719FA324C00A411A6 /* MCManager.h */,
 				C13276D819FA324C00A411A6 /* MCManager.m */,
+				C12EF43D1A1B0A2D0053C202 /* joinViewController.h */,
+				C12EF43E1A1B0A2D0053C202 /* joinViewController.m */,
 			);
 			path = "RELEASE 1";
 			sourceTree = "<group>";
@@ -237,6 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C12EF43F1A1B0A2D0053C202 /* joinViewController.m in Sources */,
 				C13276D619FA2E8300A411A6 /* ConnectionsViewController.m in Sources */,
 				C13276D919FA324C00A411A6 /* MCManager.m in Sources */,
 				C13276B119FA2D2B00A411A6 /* AppDelegate.m in Sources */,
