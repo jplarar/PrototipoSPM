@@ -1,11 +1,9 @@
   Prototipo para simulador de procesos de manufactura
   Juan Paulo Lara, Manuel Calzado y Andrés López De León
 
-  RELEASE 1
-
   Fecha de creación: 10/24/14
   Fecha de última actualización: 10/27/14
-  Descripción general: Despliega y maneja la conexion con otros dispositivos 
+  Descripción general: App en desarrollo, simula un linea de producción virtua
 
   Copyright (c) 2014 ITESM. All rights reserved.
 
@@ -27,15 +25,21 @@
   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 
  Code retrived from Gabriel Theodoropoulos tutorial
+ 
  <http://www.appcoda.com/intro-multipeer-connectivity-framework-ios-programming/>
 
   Authors:
 
   ITESM representatives
+  
   Ing. Martha Sordia Salinas  <msordia@itesm.mx>
+  
   Ing. Mario de la Fuente     <mario.delafuente@itesm.mx>
 
   ITESM students
+  
   Juan Paulo Lara Rodríguez   <jplarar@gmail.com>
+
   Manuel Calzado              <mcm_maycod@hotmail.com>
+  
   Andrés López De León        <agldeleon@gmail.com>
