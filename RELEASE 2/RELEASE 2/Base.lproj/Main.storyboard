@@ -62,10 +62,10 @@
             </objects>
             <point key="canvasLocation" x="406" y="511"/>
         </scene>
-        <!--View Controller-->
+        <!--Join View Controller-->
         <scene sceneID="DCz-va-SL1">
             <objects>
-                <viewController id="zBr-EI-RNd" sceneMemberID="viewController">
+                <viewController id="zBr-EI-RNd" customClass="JoinViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SMR-0T-zKX"/>
                         <viewControllerLayoutGuide type="bottom" id="jN6-TR-6Wm"/>
@@ -118,10 +118,10 @@
             </objects>
             <point key="canvasLocation" x="1692" y="1052"/>
         </scene>
-        <!--View Controller-->
+        <!--Connections View Controller-->
         <scene sceneID="K8p-Tu-WvH">
             <objects>
-                <viewController id="dJw-dd-8Cm" sceneMemberID="viewController">
+                <viewController id="dJw-dd-8Cm" customClass="ConnectionsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ns4-oc-xY6"/>
                         <viewControllerLayoutGuide type="bottom" id="bAy-vh-DKV"/>
@@ -176,10 +176,10 @@
             </objects>
             <point key="canvasLocation" x="1678" y="178"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Master View Controller-->
         <scene sceneID="D4M-Qb-YMI">
             <objects>
-                <tableViewController id="MTz-Vk-PDl" sceneMemberID="viewController">
+                <tableViewController id="MTz-Vk-PDl" customClass="MasterViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="125" sectionHeaderHeight="22" sectionFooterHeight="22" id="THh-XX-QZv">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -235,10 +235,10 @@
             </objects>
             <point key="canvasLocation" x="2826" y="142"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="mya-aM-wlI">
             <objects>
-                <viewController id="cwp-0Z-WW2" sceneMemberID="viewController">
+                <viewController id="cwp-0Z-WW2" customClass="DetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bbD-IC-pbg"/>
                         <viewControllerLayoutGuide type="bottom" id="msa-3i-OiI"/>
@@ -337,10 +337,10 @@
             </objects>
             <point key="canvasLocation" x="3917" y="143"/>
         </scene>
-        <!--View Controller-->
+        <!--Results View Controller-->
         <scene sceneID="5ic-Ks-tDM">
             <objects>
-                <viewController id="Srv-pJ-jV1" sceneMemberID="viewController">
+                <viewController id="Srv-pJ-jV1" customClass="ResultsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Awl-2R-BoN"/>
                         <viewControllerLayoutGuide type="bottom" id="8DO-kq-fZE"/>
@@ -447,10 +447,10 @@
             </objects>
             <point key="canvasLocation" x="3917" y="1052"/>
         </scene>
-        <!--View Controller-->
+        <!--Machine View Controller-->
         <scene sceneID="d2Q-bd-PHf">
             <objects>
-                <viewController id="OO0-7z-Ynf" sceneMemberID="viewController">
+                <viewController id="OO0-7z-Ynf" customClass="MachineViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fFm-SR-an5"/>
                         <viewControllerLayoutGuide type="bottom" id="FEY-wa-qyu"/>
@@ -539,6 +539,9 @@
                                 <state key="normal" image="power.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Srv-pJ-jV1" kind="modal" id="P24-6q-jY2"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

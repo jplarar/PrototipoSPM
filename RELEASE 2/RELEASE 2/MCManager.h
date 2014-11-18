@@ -7,6 +7,8 @@
 //
 //  Fecha de creación: 10/24/14
 //  Fecha de última actualización: 11/17/14
+//  Descripción general: Archivo donde se almacenan las variables a utilizar para
+//  el framework de multipeer connectivity.
 //
 //  Copyright (c) 2014 ITESM. All rights reserved.
 //
@@ -42,13 +44,18 @@
 //  Andrés López De León        <agldeleon@gmail.com>
 //
 
-#import <UIKit/UIKit.h>
-#import "MCManager.h"
+#import <Foundation/Foundation.h>
+#import <MultipeerConnectivity/MultipeerConnectivity.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface MCManager : NSObject <MCSessionDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, strong) MCPeerID *peerID;
+@property (nonatomic, strong) MCSession *session;
+@property (nonatomic, strong) MCBrowserViewController *browser;
+@property (nonatomic, strong) MCAdvertiserAssistant *advertiser;
 
-@property (nonatomic, strong) MCManager *mcManager;
+-(void)setupPeerAndSessionWithDisplayName:(NSString *)displayName;
+-(void)setupMCBrowser;
+-(void)advertiseSelf:(BOOL)shouldAdvertise;
 
 @end

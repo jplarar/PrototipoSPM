@@ -7,6 +7,7 @@
 //
 //  Fecha de creación: 10/24/14
 //  Fecha de última actualización: 11/17/14
+//  Descripción general: Almacena las variables a utilizar para la coneccion
 //
 //  Copyright (c) 2014 ITESM. All rights reserved.
 //
@@ -42,13 +43,11 @@
 //  Andrés López De León        <agldeleon@gmail.com>
 //
 
-#import <UIKit/UIKit.h>
-#import "MCManager.h"
+#import "ViewController.h"
+#import <MultipeerConnectivity/MultipeerConnectivity.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface ConnectionsViewController : UIViewController <MCBrowserViewControllerDelegate, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource>
 
-@property (strong, nonatomic) UIWindow *window;
-
-@property (nonatomic, strong) MCManager *mcManager;
+- (IBAction)browseForDevices:(id)sender;
 
 @end

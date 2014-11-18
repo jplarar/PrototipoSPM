@@ -36,6 +36,13 @@
 		C12EF4321A1AF9930053C202 /* box.png in Resources */ = {isa = PBXBuildFile; fileRef = C12EF4311A1AF9930053C202 /* box.png */; };
 		C12EF4341A1AFA5C0053C202 /* gastos.png in Resources */ = {isa = PBXBuildFile; fileRef = C12EF4331A1AFA5C0053C202 /* gastos.png */; };
 		C12EF4361A1AFAE00053C202 /* stats.png in Resources */ = {isa = PBXBuildFile; fileRef = C12EF4351A1AFAE00053C202 /* stats.png */; };
+		C12EF4391A1B05BB0053C202 /* MCManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C12EF4381A1B05BB0053C202 /* MCManager.m */; };
+		C12EF43C1A1B060E0053C202 /* ConnectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C12EF43B1A1B060E0053C202 /* ConnectionsViewController.m */; };
+		C12EF4421A1B0A500053C202 /* JoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C12EF4411A1B0A500053C202 /* JoinViewController.m */; };
+		C12EF47D1A1B0AC60053C202 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C12EF47C1A1B0AC60053C202 /* DetailViewController.m */; };
+		C12EF4801A1B0B080053C202 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C12EF47F1A1B0B080053C202 /* MasterViewController.m */; };
+		C12EF4831A1B0B430053C202 /* MachineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C12EF4821A1B0B430053C202 /* MachineViewController.m */; };
+		C12EF4861A1B0B820053C202 /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C12EF4851A1B0B820053C202 /* ResultsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +91,20 @@
 		C12EF4311A1AF9930053C202 /* box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = box.png; sourceTree = "<group>"; };
 		C12EF4331A1AFA5C0053C202 /* gastos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gastos.png; sourceTree = "<group>"; };
 		C12EF4351A1AFAE00053C202 /* stats.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stats.png; sourceTree = "<group>"; };
+		C12EF4371A1B05BB0053C202 /* MCManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCManager.h; sourceTree = "<group>"; };
+		C12EF4381A1B05BB0053C202 /* MCManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCManager.m; sourceTree = "<group>"; };
+		C12EF43A1A1B060E0053C202 /* ConnectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionsViewController.h; sourceTree = "<group>"; };
+		C12EF43B1A1B060E0053C202 /* ConnectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionsViewController.m; sourceTree = "<group>"; };
+		C12EF4401A1B0A500053C202 /* JoinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JoinViewController.h; sourceTree = "<group>"; };
+		C12EF4411A1B0A500053C202 /* JoinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JoinViewController.m; sourceTree = "<group>"; };
+		C12EF47B1A1B0AC60053C202 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		C12EF47C1A1B0AC60053C202 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		C12EF47E1A1B0B080053C202 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		C12EF47F1A1B0B080053C202 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		C12EF4811A1B0B430053C202 /* MachineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MachineViewController.h; sourceTree = "<group>"; };
+		C12EF4821A1B0B430053C202 /* MachineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MachineViewController.m; sourceTree = "<group>"; };
+		C12EF4841A1B0B820053C202 /* ResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsViewController.h; sourceTree = "<group>"; };
+		C12EF4851A1B0B820053C202 /* ResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +146,7 @@
 		C12EF3DD1A1AD0220053C202 /* RELEASE 2 */ = {
 			isa = PBXGroup;
 			children = (
+				C12EF4821A1B0B430053C202 /* MachineViewController.m */,
 				C12EF41C1A1AF0790053C202 /* img */,
 				C12EF3E21A1AD0220053C202 /* AppDelegate.h */,
 				C12EF3E31A1AD0220053C202 /* AppDelegate.m */,
@@ -134,6 +156,19 @@
 				C12EF3EB1A1AD0230053C202 /* Images.xcassets */,
 				C12EF3ED1A1AD0230053C202 /* LaunchScreen.xib */,
 				C12EF3DE1A1AD0220053C202 /* Supporting Files */,
+				C12EF4371A1B05BB0053C202 /* MCManager.h */,
+				C12EF4381A1B05BB0053C202 /* MCManager.m */,
+				C12EF43A1A1B060E0053C202 /* ConnectionsViewController.h */,
+				C12EF43B1A1B060E0053C202 /* ConnectionsViewController.m */,
+				C12EF4401A1B0A500053C202 /* JoinViewController.h */,
+				C12EF4411A1B0A500053C202 /* JoinViewController.m */,
+				C12EF4811A1B0B430053C202 /* MachineViewController.h */,
+				C12EF47B1A1B0AC60053C202 /* DetailViewController.h */,
+				C12EF47C1A1B0AC60053C202 /* DetailViewController.m */,
+				C12EF47E1A1B0B080053C202 /* MasterViewController.h */,
+				C12EF47F1A1B0B080053C202 /* MasterViewController.m */,
+				C12EF4841A1B0B820053C202 /* ResultsViewController.h */,
+				C12EF4851A1B0B820053C202 /* ResultsViewController.m */,
 			);
 			path = "RELEASE 2";
 			sourceTree = "<group>";
@@ -315,9 +350,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C12EF43C1A1B060E0053C202 /* ConnectionsViewController.m in Sources */,
+				C12EF4831A1B0B430053C202 /* MachineViewController.m in Sources */,
 				C12EF3E71A1AD0220053C202 /* ViewController.m in Sources */,
+				C12EF4391A1B05BB0053C202 /* MCManager.m in Sources */,
+				C12EF47D1A1B0AC60053C202 /* DetailViewController.m in Sources */,
+				C12EF4801A1B0B080053C202 /* MasterViewController.m in Sources */,
 				C12EF3E41A1AD0220053C202 /* AppDelegate.m in Sources */,
+				C12EF4421A1B0A500053C202 /* JoinViewController.m in Sources */,
 				C12EF3E11A1AD0220053C202 /* main.m in Sources */,
+				C12EF4861A1B0B820053C202 /* ResultsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +554,7 @@
 				C12EF4001A1AD0230053C202 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C12EF4011A1AD0230053C202 /* Build configuration list for PBXNativeTarget "RELEASE 2Tests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +563,7 @@
 				C12EF4031A1AD0230053C202 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
