@@ -1,4 +1,4 @@
-  Prototipo para simulador de procesos de manufactura
+  <h1>Prototipo para simulador de procesos de manufactura</h1>
   Juan Paulo Lara, Manuel Calzado y Andrés López De León
 
   Fecha de creación: 10/24/14
