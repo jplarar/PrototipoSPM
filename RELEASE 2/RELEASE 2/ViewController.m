@@ -24,4 +24,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(IBAction)unWindViewController:(UIStoryboardSegue *)segue
+{
+    [self.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
 @end
