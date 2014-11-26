@@ -43,6 +43,7 @@
 		C12EF4801A1B0B080053C202 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C12EF47F1A1B0B080053C202 /* MasterViewController.m */; };
 		C12EF4831A1B0B430053C202 /* MachineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C12EF4821A1B0B430053C202 /* MachineViewController.m */; };
 		C12EF4861A1B0B820053C202 /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C12EF4851A1B0B820053C202 /* ResultsViewController.m */; };
+		FB03582B1A24275800F585C0 /* Captura de pantalla de Simulador iOS 24.11.2014 20.46.31.png in Resources */ = {isa = PBXBuildFile; fileRef = FB03582A1A24275800F585C0 /* Captura de pantalla de Simulador iOS 24.11.2014 20.46.31.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 		C12EF4821A1B0B430053C202 /* MachineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MachineViewController.m; sourceTree = "<group>"; };
 		C12EF4841A1B0B820053C202 /* ResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsViewController.h; sourceTree = "<group>"; };
 		C12EF4851A1B0B820053C202 /* ResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsViewController.m; sourceTree = "<group>"; };
+		FB03582A1A24275800F585C0 /* Captura de pantalla de Simulador iOS 24.11.2014 20.46.31.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Captura de pantalla de Simulador iOS 24.11.2014 20.46.31.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +204,7 @@
 		C12EF41C1A1AF0790053C202 /* img */ = {
 			isa = PBXGroup;
 			children = (
+				FB03582A1A24275800F585C0 /* Captura de pantalla de Simulador iOS 24.11.2014 20.46.31.png */,
 				C12EF4351A1AFAE00053C202 /* stats.png */,
 				C12EF4331A1AFA5C0053C202 /* gastos.png */,
 				C12EF4311A1AF9930053C202 /* box.png */,
@@ -314,6 +317,7 @@
 				C12EF4141A1AEE0F0053C202 /* time.png in Resources */,
 				C12EF40A1A1ADBE60053C202 /* green.png in Resources */,
 				C12EF4191A1AF0720053C202 /* circle.png in Resources */,
+				FB03582B1A24275800F585C0 /* Captura de pantalla de Simulador iOS 24.11.2014 20.46.31.png in Resources */,
 				C12EF4341A1AFA5C0053C202 /* gastos.png in Resources */,
 				C12EF4321A1AF9930053C202 /* box.png in Resources */,
 				C12EF3EF1A1AD0230053C202 /* LaunchScreen.xib in Resources */,
