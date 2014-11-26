@@ -91,9 +91,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="6Km-fh-EJm">
-                                <rect key="frame" x="502" y="452" width="20" height="20"/>
-                            </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Esperando al administrador" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" useAutomaticPreferredMaxLayoutWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UDo-LS-icl">
                                 <rect key="frame" x="389" y="390" width="246" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -556,7 +553,7 @@
                                 <segue destination="CzT-vG-GBa" kind="unwind" unwindAction="unWindConnectionsViewController:" id="fsd-Gq-S4M"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="KWy-f7-lBX"/>
+                        <barButtonItem key="rightBarButtonItem" id="KWy-f7-lBX"/>
                     </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                 </tableViewController>
