@@ -556,6 +556,7 @@
                                 <segue destination="CzT-vG-GBa" kind="unwind" unwindAction="unWindConnectionsViewController:" id="fsd-Gq-S4M"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="KWy-f7-lBX"/>
                     </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                 </tableViewController>
