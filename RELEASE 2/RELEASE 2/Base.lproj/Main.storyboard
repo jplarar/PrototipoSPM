@@ -66,7 +66,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="406" y="511"/>
+            <point key="canvasLocation" x="389" y="493"/>
         </scene>
         <!--Join View Controller-->
         <scene sceneID="DCz-va-SL1">
@@ -1030,12 +1030,9 @@
                                 <state key="normal" image="add.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-<<<<<<< HEAD
                                 <connections>
                                     <action selector="agregarCirculo:" destination="OO0-7z-Ynf" eventType="touchUpInside" id="a3i-1z-HAR"/>
                                 </connections>
-=======
->>>>>>> FETCH_HEAD
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="77f-l5-c8K">
                                 <rect key="frame" x="183" y="538" width="50" height="50"/>
@@ -1069,7 +1066,6 @@
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
-<<<<<<< HEAD
                         <outlet property="circuloImageView" destination="cha-EA-aI5" id="2It-UL-xdH"/>
                         <outlet property="cuadradoImageView" destination="lXT-4B-zEd" id="oMQ-Qo-Uix"/>
                         <outlet property="dineroLabel" destination="dXq-Zc-RTJ" id="D8x-dn-UGf"/>
@@ -1090,9 +1086,7 @@
                         <outlet property="segundosTotalLabel" destination="3rO-Xo-qOd" id="6kX-nx-kV2"/>
                         <outlet property="segundosTrianguloLabel" destination="9eh-B6-TfP" id="7ew-X1-I61"/>
                         <outlet property="trianguloImageView" destination="rhL-Yi-8lM" id="IOW-XX-EOk"/>
-=======
                         <segue destination="Srv-pJ-jV1" kind="modal" id="KRt-PG-BuJ"/>
->>>>>>> FETCH_HEAD
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5yv-Lk-vMW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1102,7 +1096,6 @@
         <!--Navigation Controller-->
         <scene sceneID="4WU-Uy-PXl">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QYL-x4-AZ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gDq-9T-igI" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="l3f-C3-Ktf">
@@ -1114,6 +1107,7 @@
                         <segue destination="z1h-Mh-6AX" kind="relationship" relationship="rootViewController" id="at1-Dy-mpf"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QYL-x4-AZ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2790" y="162"/>
         </scene>
@@ -1143,4 +1137,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="XvF-4G-lP5"/>
+    </inferredMetricsTieBreakers>
 </document>
