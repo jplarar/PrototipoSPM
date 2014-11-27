@@ -143,9 +143,9 @@
     segundos = @"00";
 
     NSString *tiempo = [NSString stringWithFormat: @"%@:%@", minuto, segundos];
-    UIBarButtonItem *play = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:@selector(playAll)];
+    UIBarButtonItem *play = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:@selector(playAll:)];
     
-    UIBarButtonItem *pause = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPause target:self action:@selector(pauseAll)];
+    UIBarButtonItem *pause = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPause target:self action:@selector(pauseAll:)];
     
     UIBarButtonItem *time = [[UIBarButtonItem alloc]initWithTitle:tiempo
                                                             style:UIBarButtonItemStylePlain
@@ -206,17 +206,6 @@
     machine6[0] =2;
     machine7[0] =2;
     
-}
-
-- (IBAction)stopAll:(id)sender {
-    
-    machine1[0]= 3;
-    machine2[0] =3;
-    machine3[0] =3;
-    machine4[0] =3;
-    machine5[0] =3;
-    machine6[0] =3;
-    machine7[0] =3;
 }
 
 - (void)updateMachines:(NSTimer*)timer {
@@ -616,6 +605,5 @@
     // Pass the selected object to the new view controller.
 }
 */
-
 
 @end

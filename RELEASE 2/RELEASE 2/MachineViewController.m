@@ -202,9 +202,8 @@
     NSArray *machinesInfo = [receivedInfo componentsSeparatedByString:@"/"];
     NSArray *myReceivedInfo= [machinesInfo[numMachine-1] componentsSeparatedByString:@"_"];
     
-
-    myInfo[0] = [myReceivedInfo[0] intValue];
-    myInfo[1] = [myReceivedInfo[1] intValue];
+    for (int x=0; x < (sizeof myInfo/sizeof(int)); x++)
+        myInfo[x] = [myReceivedInfo[x] intValue];
     
     [self update];
     
@@ -482,9 +481,9 @@ self.entradaTrianguloLabel.text = [@(myInfo[7]) stringValue];
     NSData *receivedData = [[notification userInfo] objectForKey:@"data"];
     NSString *receivedText = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
     
-
+    NSLog(receivedText);
     
-    [self decodeStringReceived:receivedText];
+    //[self decodeStringReceived:receivedText];
     
 }
 
