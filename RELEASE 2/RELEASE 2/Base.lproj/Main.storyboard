@@ -109,9 +109,6 @@
                                 <state key="normal" image="gears3.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="OO0-7z-Ynf" kind="modal" id="HQV-k6-wth"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ALd-sz-RLJ">
                                 <rect key="frame" x="56" y="47" width="143" height="61"/>
@@ -131,6 +128,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="nameTF" destination="dZ9-sT-bOJ" id="1lJ-dV-dWA"/>
+                        <segue destination="OO0-7z-Ynf" kind="modal" identifier="IniciarJuego" id="vyK-zM-pqW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u0M-O6-dCi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -177,6 +175,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="startGame:" destination="dJw-dd-8Cm" eventType="touchUpInside" id="zuk-cf-xVF"/>
                                     <segue destination="gDq-9T-igI" kind="modal" id="dlQ-iY-j7T"/>
                                 </connections>
                             </button>
@@ -685,15 +684,15 @@
                                 <state key="normal" image="power.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="Srv-pJ-jV1" kind="modal" id="XvF-4G-lP5"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <segue destination="Srv-pJ-jV1" kind="modal" id="KRt-PG-BuJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5yv-Lk-vMW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
