@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C12A9B8D1A275F39003D2899 /* squareYellow.png in Resources */ = {isa = PBXBuildFile; fileRef = C12A9B8C1A275F39003D2899 /* squareYellow.png */; };
+		C12A9B8F1A275F4E003D2899 /* circleYellow.png in Resources */ = {isa = PBXBuildFile; fileRef = C12A9B8E1A275F4E003D2899 /* circleYellow.png */; };
+		C12A9B911A275F67003D2899 /* triangleYellow.png in Resources */ = {isa = PBXBuildFile; fileRef = C12A9B901A275F67003D2899 /* triangleYellow.png */; };
 		C12EF3E11A1AD0220053C202 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C12EF3E01A1AD0220053C202 /* main.m */; };
 		C12EF3E41A1AD0220053C202 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C12EF3E31A1AD0220053C202 /* AppDelegate.m */; };
 		C12EF3E71A1AD0220053C202 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C12EF3E61A1AD0220053C202 /* ViewController.m */; };
@@ -62,6 +65,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C12A9B8C1A275F39003D2899 /* squareYellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = squareYellow.png; path = ../squareYellow.png; sourceTree = "<group>"; };
+		C12A9B8E1A275F4E003D2899 /* circleYellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = circleYellow.png; path = ../circleYellow.png; sourceTree = "<group>"; };
+		C12A9B901A275F67003D2899 /* triangleYellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = triangleYellow.png; path = ../triangleYellow.png; sourceTree = "<group>"; };
 		C12EF3DB1A1AD0220053C202 /* RELEASE 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RELEASE 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C12EF3DF1A1AD0220053C202 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C12EF3E01A1AD0220053C202 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -214,6 +220,9 @@
 		C12EF41C1A1AF0790053C202 /* img */ = {
 			isa = PBXGroup;
 			children = (
+				C12A9B901A275F67003D2899 /* triangleYellow.png */,
+				C12A9B8E1A275F4E003D2899 /* circleYellow.png */,
+				C12A9B8C1A275F39003D2899 /* squareYellow.png */,
 				D5CC769F1A27115700402297 /* Captura de pantalla de Simulador iOS 24.11.2014 20.46.31.png */,
 				D5CC76A01A27115700402297 /* time.png */,
 				D5CC76A11A27115700402297 /* time2.png */,
@@ -343,11 +352,14 @@
 				D5CC76CA1A27115700402297 /* gastos.png in Resources */,
 				C12EF3EF1A1AD0230053C202 /* LaunchScreen.xib in Resources */,
 				D5CC76C61A27115700402297 /* deliver.png in Resources */,
+				C12A9B8D1A275F39003D2899 /* squareYellow.png in Resources */,
 				D5CC76CE1A27115700402297 /* people.png in Resources */,
 				D5CC76C51A27115700402297 /* carrito.png in Resources */,
 				D5CC76C91A27115700402297 /* gears3.png in Resources */,
 				D5CC76D11A27115700402297 /* time3.png in Resources */,
 				D5CC76C11A27115700402297 /* powerRed.png in Resources */,
+				C12A9B8F1A275F4E003D2899 /* circleYellow.png in Resources */,
+				C12A9B911A275F67003D2899 /* triangleYellow.png in Resources */,
 				D5CC76C71A27115700402297 /* triangleGreen.png in Resources */,
 				D5CC76C41A27115700402297 /* circleGreen.png in Resources */,
 				D5CC76CD1A27115700402297 /* moneybag.png in Resources */,
