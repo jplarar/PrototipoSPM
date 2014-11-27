@@ -108,6 +108,9 @@
                                 <state key="normal" image="gears3.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="OO0-7z-Ynf" kind="modal" id="LFI-w1-Eqt"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ALd-sz-RLJ">
                                 <rect key="frame" x="56" y="47" width="143" height="61"/>
@@ -883,11 +886,11 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nzV-Jh-Sss">
                                 <rect key="frame" x="437" y="290" width="150" height="150"/>
-                                <state key="normal" image="power.png">
+                                <state key="normal" image="powerRed.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Srv-pJ-jV1" kind="modal" id="XvF-4G-lP5"/>
+                                    <action selector="changePowerButton:" destination="OO0-7z-Ynf" eventType="touchUpInside" id="Unp-PY-N73"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xYC-bk-bAQ"/>
@@ -992,15 +995,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="circle.png" translatesAutoresizingMaskIntoConstraints="NO" id="cha-EA-aI5">
-                                <rect key="frame" x="42" y="603" width="100" height="100"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="square.png" translatesAutoresizingMaskIntoConstraints="NO" id="lXT-4B-zEd">
-                                <rect key="frame" x="160" y="603" width="100" height="100"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="triangle.png" translatesAutoresizingMaskIntoConstraints="NO" id="rhL-Yi-8lM">
-                                <rect key="frame" x="275" y="603" width="100" height="100"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=":" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" useAutomaticPreferredMaxLayoutWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="908-j1-HFi">
                                 <rect key="frame" x="254" y="124" width="19" height="46"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -1061,13 +1055,39 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qkm-Uz-BnU">
+                                <rect key="frame" x="38" y="610" width="100" height="100"/>
+                                <state key="normal" title="Button" image="circle.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectCirculoButton:" destination="OO0-7z-Ynf" eventType="touchUpInside" id="Mu6-Ia-tDU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fil-PJ-AZX">
+                                <rect key="frame" x="158" y="610" width="100" height="100"/>
+                                <state key="normal" image="square.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectCuadradoButton:" destination="OO0-7z-Ynf" eventType="touchUpInside" id="rWS-tO-6FD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0yz-AR-lzK">
+                                <rect key="frame" x="275" y="610" width="100" height="100"/>
+                                <state key="normal" title="Button" image="triangle.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectTrianguloLabel:" destination="OO0-7z-Ynf" eventType="touchUpInside" id="4tc-cz-1Jm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
-                        <outlet property="circuloImageView" destination="cha-EA-aI5" id="2It-UL-xdH"/>
-                        <outlet property="cuadradoImageView" destination="lXT-4B-zEd" id="oMQ-Qo-Uix"/>
+                        <outlet property="circle" destination="Qkm-Uz-BnU" id="EII-5P-Ddu"/>
                         <outlet property="dineroLabel" destination="dXq-Zc-RTJ" id="D8x-dn-UGf"/>
                         <outlet property="entradaCirculoLabel" destination="NxL-Za-e2Q" id="1W5-g9-mBO"/>
                         <outlet property="entradaCuadradoLabel" destination="4M6-82-BJs" id="pJ6-LB-2Na"/>
@@ -1079,14 +1099,14 @@
                         <outlet property="minutosTotalLabel" destination="yl6-QY-rHS" id="NZK-8X-jvK"/>
                         <outlet property="minutosTrianguloLabel" destination="7by-cA-duM" id="QtE-Vu-EGK"/>
                         <outlet property="numeroMaquinaLabel" destination="CTW-fZ-MHp" id="fvC-OH-0QD"/>
-                        <outlet property="powerImageView" destination="nzV-Jh-Sss" id="dEe-m6-Y2M"/>
                         <outlet property="segundosAjusteLabel" destination="u7Y-qi-89d" id="SH6-bj-KvT"/>
                         <outlet property="segundosCirculoLabel" destination="mid-sz-Aey" id="1JZ-KK-V4a"/>
                         <outlet property="segundosCuadradoLabel" destination="mrA-ks-dkH" id="U8Z-3T-6qS"/>
                         <outlet property="segundosTotalLabel" destination="3rO-Xo-qOd" id="6kX-nx-kV2"/>
                         <outlet property="segundosTrianguloLabel" destination="9eh-B6-TfP" id="7ew-X1-I61"/>
-                        <outlet property="trianguloImageView" destination="rhL-Yi-8lM" id="IOW-XX-EOk"/>
-                        <segue destination="Srv-pJ-jV1" kind="modal" id="KRt-PG-BuJ"/>
+                        <outlet property="square" destination="fil-PJ-AZX" id="U0v-bW-jet"/>
+                        <outlet property="triangle" destination="0yz-AR-lzK" id="ht0-Fi-zom"/>
+                        <segue destination="Srv-pJ-jV1" kind="modal" identifier="finJuego" id="KRt-PG-BuJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5yv-Lk-vMW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1124,7 +1144,8 @@
         <image name="money.png" width="512" height="512"/>
         <image name="moneybag.png" width="128" height="128"/>
         <image name="people.png" width="128" height="128"/>
-        <image name="power.png" width="128" height="128"/>
+        <image name="power.png" width="100" height="100"/>
+        <image name="powerRed.png" width="100" height="100"/>
         <image name="square.png" width="128" height="128"/>
         <image name="stats.png" width="128" height="128"/>
         <image name="time.png" width="512" height="512"/>
@@ -1138,6 +1159,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="XvF-4G-lP5"/>
+        <segue reference="vyK-zM-pqW"/>
     </inferredMetricsTieBreakers>
 </document>

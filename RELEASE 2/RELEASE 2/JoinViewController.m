@@ -89,7 +89,7 @@ int numMachine;
         
         
         // Pass the information to your destination view
-        [vc setMachineNumber:numMachine];
+        //[vc setMachineNumber:numMachine];
     }
 }
 

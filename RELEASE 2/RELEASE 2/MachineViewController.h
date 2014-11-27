@@ -25,12 +25,17 @@
 @property (strong, nonatomic) IBOutlet UILabel *minutosTrianguloLabel;
 @property (strong, nonatomic) IBOutlet UILabel *segundosTrianguloLabel;
 @property (strong, nonatomic) IBOutlet UILabel *estadoLabel;
+@property (weak, nonatomic) IBOutlet UIButton *circle;
+@property (weak, nonatomic) IBOutlet UIButton *square;
+@property (weak, nonatomic) IBOutlet UIButton *triangle;
 
-//imagenes
-@property (strong, nonatomic) IBOutlet UIImageView *circuloImageView;
-@property (strong, nonatomic) IBOutlet UIImageView *cuadradoImageView;
-@property (strong, nonatomic) IBOutlet UIImageView *trianguloImageView;
-@property (strong, nonatomic) IBOutlet UIButton *powerImageView;
+
+//imagenes botones
+- (IBAction)selectCirculoButton:(id)sender;
+- (IBAction)selectCuadradoButton:(id)sender;
+- (IBAction)selectTrianguloLabel:(id)sender;
+- (IBAction)changePowerButton:(id)sender;
+
 
 //agregar materiales
 - (IBAction)agregarCirculo:(id)sender;
