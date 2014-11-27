@@ -41,6 +41,7 @@
 
 @implementation MachineViewController
 
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -110,6 +111,13 @@
     materialPrice[1]=7000;
     materialPrice[2]=2500;
     
+    self.appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(didReceiveDataWithNotification:)
+                                                 name:@"MCDidReceiveDataNotification"
+                                               object:nil];
+    
     
 
     for (int x=0; x < (sizeof myInfo/sizeof(int)); x++)
@@ -168,6 +176,7 @@
 }
 
 - (void)timerTicked:(NSTimer*)timer {
+    [self sendMyMessage];
     if (myInfo[0] == 1) {
         [self checkMaterialProduction];
         segundos ++;
@@ -196,9 +205,11 @@
     for (int x=0; x < (sizeof myInfo/sizeof(int)); x++)
         myInfo[x] = [myReceivedInfo[x] intValue];
     
+    [self update];
+    
     
 }
--(NSString *)encodeStringReceived
+-(NSString *)encodeStringToSend
 {
     NSString *myInfoStr[11];
     NSString *encodedString = @"";
@@ -218,6 +229,7 @@
     numMachine = num;
     NSString *strNum = [@(num) stringValue];
     self.numeroMaquinaLabel.text = strNum;
+    myInfo[2]=numMachine;
 }
 -(void)update
 {
@@ -285,36 +297,80 @@ self.entradaTrianguloLabel.text = [@(myInfo[7]) stringValue];
 
 - (IBAction)selectCirculoButton:(id)sender
 {
-    if (myInfo[0] == 1 && myInfo[4] != 3){
-        myInfo[3]=1;
+    if (myInfo[0] == 1 && myInfo[4] ==2){
+        //Cambiar power a Ajustando
+        myInfo[4]=3;
+        [self.power setImage:[UIImage imageNamed:@"powerYellow.png"] forState:UIControlStateNormal ];
+        self.estadoLabel.text=@"Ajustando";
         contadorProd = 0;
-        //Actualizar imagen de material seleccionado
-        [sender setImage:[UIImage imageNamed:@"circleGreen.png"] forState:UIControlStateNormal];
+        //Cambiar color a amarillo para regresarle feedback al usuario
+        [sender setImage:[UIImage imageNamed:@"circleYellow.png"] forState:UIControlStateNormal];
         [self.square setImage:[UIImage imageNamed:@"square.png"] forState:UIControlStateNormal];
         [self.triangle setImage:[UIImage imageNamed:@"triangle.png"] forState:UIControlStateNormal];
+        
+
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, onAdjustTime[numMachine -1] * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+            myInfo[3]=1;
+            //Cambiar power a Encendido
+            myInfo[4]=2;
+            self.estadoLabel.text=@"Encendido";
+            //Actualizar imagen de material seleccionado
+            [sender setImage:[UIImage imageNamed:@"circleGreen.png"] forState:UIControlStateNormal];
+            [self.power setImage:[UIImage imageNamed:@"powerGreen.png"] forState:UIControlStateNormal];
+          
+        });
     }
 }
 - (IBAction)selectCuadradoButton:(id)sender
 {
-    if (myInfo[0] == 1 && myInfo[4] != 3){
-        myInfo[3]=2;
+    if (myInfo[0] == 1 && myInfo[4] ==2){
+        //Cambiar power a Ajustando
+        myInfo[4]=3;
+        [self.power setImage:[UIImage imageNamed:@"powerYellow.png"] forState:UIControlStateNormal ];
+        self.estadoLabel.text=@"Ajustando";
         contadorProd = 0;
-        //Actualizar imagen de material seleccionado
-        [sender setImage:[UIImage imageNamed:@"squareGreen.png"] forState:UIControlStateNormal];
+        //Cambiar color a amarillo para regresarle feedback al usuario
+        [sender setImage:[UIImage imageNamed:@"squareYellow.png"] forState:UIControlStateNormal];
         [self.circle setImage:[UIImage imageNamed:@"circle.png"] forState:UIControlStateNormal];
         [self.triangle setImage:[UIImage imageNamed:@"triangle.png"] forState:UIControlStateNormal];
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, onAdjustTime[numMachine -1] * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+            myInfo[3]=2;
+            //Cambiar power a Encendido
+            myInfo[4]=2;
+            self.estadoLabel.text=@"Encendido";
+            //Actualizar imagen de material seleccionado
+            [sender setImage:[UIImage imageNamed:@"squareGreen.png"] forState:UIControlStateNormal];
+            [self.power setImage:[UIImage imageNamed:@"powerGreen.png"] forState:UIControlStateNormal];
+        });
+
     }
 
 }
 - (IBAction)selectTrianguloLabel:(id)sender
 {
-    if (myInfo[0] == 1 && myInfo[4] != 3){
-        myInfo[3]=3;
+    if (myInfo[0] == 1 && myInfo[4] == 2){
+        //Cambiar power a Ajustando
+        myInfo[4]=3;
+        [self.power setImage:[UIImage imageNamed:@"powerYellow.png"] forState:UIControlStateNormal ];
+        self.estadoLabel.text=@"Ajustando";
         contadorProd = 0;
-        //Actualizar imagen de material seleccionado
-        [sender setImage:[UIImage imageNamed:@"triangleGreen.png"] forState:UIControlStateNormal];
+        //Cambiar color a amarillo para regresarle feedback al usuario
+        [sender setImage:[UIImage imageNamed:@"triangleYellow.png"] forState:UIControlStateNormal];
         [self.circle setImage:[UIImage imageNamed:@"circle.png"] forState:UIControlStateNormal];
         [self.square setImage:[UIImage imageNamed:@"square.png"] forState:UIControlStateNormal];
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, onAdjustTime[numMachine -1] * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+            myInfo[3]=3;
+            //Cambiar power a Encendido
+            myInfo[4]=2;
+            self.estadoLabel.text=@"Encendido";
+            //Actualizar imagen de material seleccionado
+            [sender setImage:[UIImage imageNamed:@"triangleGreen.png"] forState:UIControlStateNormal];
+            [self.power setImage:[UIImage imageNamed:@"powerGreen.png"] forState:UIControlStateNormal];
+
+        });
+
     }
 }
 - (IBAction)changePowerButton:(id)sender
@@ -397,6 +453,37 @@ self.entradaTrianguloLabel.text = [@(myInfo[7]) stringValue];
                 break;
         }
     }
+    
+}
+
+-(void)sendMyMessage{
+    NSString *data = [self encodeStringToSend];
+    NSData *dataToSend = [data dataUsingEncoding:NSUTF8StringEncoding];
+    NSArray *allPeers = self.appDelegate.mcManager.session.connectedPeers;
+    NSError *error;
+    
+
+
+    [self.appDelegate.mcManager.session sendData:dataToSend
+                                     toPeers:allPeers
+                                    withMode:MCSessionSendDataReliable
+                                       error:&error];
+    
+    if (error) {
+        NSLog(@"%@", [error localizedDescription]);
+    }
+}
+
+-(void)didReceiveDataWithNotification:(NSNotification *)notification{
+    MCPeerID *peerID = [[notification userInfo] objectForKey:@"peerID"];
+    NSString *peerDisplayName = peerID.displayName;
+    
+    NSData *receivedData = [[notification userInfo] objectForKey:@"data"];
+    NSString *receivedText = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
+    
+    NSLog(receivedText);
+    
+    //[self decodeStringReceived:receivedText];
     
 }
 

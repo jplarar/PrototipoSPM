@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface MasterViewController : UITableViewController
 @property (strong, nonatomic) IBOutlet UIImageView *estadoMaquina1;
 @property (strong, nonatomic) IBOutlet UIImageView *estadoMaquina2;
@@ -24,6 +25,8 @@
 @property (strong, nonatomic) IBOutlet UIImageView *materialMaquina5;
 @property (strong, nonatomic) IBOutlet UIImageView *materialMaquina6;
 @property (strong, nonatomic) IBOutlet UIImageView *materialMaquina7;
+
+
 
 
 @end

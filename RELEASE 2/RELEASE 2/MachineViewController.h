@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "AppDelegate.h"
 
 @interface MachineViewController : ViewController
 @property (strong, nonatomic) IBOutlet UILabel *minutosTotalLabel;
@@ -28,6 +29,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *circle;
 @property (weak, nonatomic) IBOutlet UIButton *square;
 @property (weak, nonatomic) IBOutlet UIButton *triangle;
+@property (strong, nonatomic) IBOutlet UIButton *power;
 
 
 //imagenes botones
@@ -43,5 +45,10 @@
 - (IBAction)agregarCirculo:(id)sender;
 - (IBAction)agregarCuadrado:(id)sender;
 - (IBAction)agregarTriangulo:(id)sender;
+
+
+@property (nonatomic, strong) AppDelegate *appDelegate;
+
+-(void)didReceiveDataWithNotification:(NSNotification *)notification;
 
 @end

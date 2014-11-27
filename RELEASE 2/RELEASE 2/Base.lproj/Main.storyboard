@@ -797,11 +797,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Maquinas" id="RJh-bF-jqx">
-                        <barButtonItem key="leftBarButtonItem" title="Terminar Sesion" id="c0w-6z-gz6">
-                            <connections>
-                                <segue destination="CzT-vG-GBa" kind="unwind" unwindAction="unWindConnectionsViewController:" id="fsd-Gq-S4M"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" title="Terminar Sesion" id="c0w-6z-gz6"/>
                     </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
@@ -822,7 +818,6 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P3O-mA-NcX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="CzT-vG-GBa" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4053" y="143"/>
         </scene>
@@ -838,12 +833,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tiempo transcurrido" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" useAutomaticPreferredMaxLayoutWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SGB-In-Hmd">
-                                <rect key="frame" x="87" y="23" width="264" height="50"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Maquina:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" useAutomaticPreferredMaxLayoutWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zig-eE-iAZ">
                                 <rect key="frame" x="123" y="272" width="171" height="47"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -1081,6 +1070,12 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tiempo transcurrido" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" useAutomaticPreferredMaxLayoutWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SGB-In-Hmd">
+                                <rect key="frame" x="38" y="28" width="328" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1099,6 +1094,7 @@
                         <outlet property="minutosTotalLabel" destination="yl6-QY-rHS" id="NZK-8X-jvK"/>
                         <outlet property="minutosTrianguloLabel" destination="7by-cA-duM" id="QtE-Vu-EGK"/>
                         <outlet property="numeroMaquinaLabel" destination="CTW-fZ-MHp" id="fvC-OH-0QD"/>
+                        <outlet property="power" destination="nzV-Jh-Sss" id="3pP-Zf-AdF"/>
                         <outlet property="segundosAjusteLabel" destination="u7Y-qi-89d" id="SH6-bj-KvT"/>
                         <outlet property="segundosCirculoLabel" destination="mid-sz-Aey" id="1JZ-KK-V4a"/>
                         <outlet property="segundosCuadradoLabel" destination="mrA-ks-dkH" id="U8Z-3T-6qS"/>
