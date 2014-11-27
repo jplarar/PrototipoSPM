@@ -17,6 +17,7 @@
     int onProdCircle[7];
     int onProdSquare[7];
     int onProdTriangle[7];
+    int materialPrice[3];
     /*
      Pos0 = @"state" 1=Play; 2=Pause; 3=Stop,
      Pos1 =@"money",
@@ -32,6 +33,7 @@
      */
     int segundos;
     int minutos;
+    int contadorProd;
     
     
 }
@@ -50,10 +52,14 @@
 
 - (void)viewDidLoad
 {
+    
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    
+    //inicializador de dinero
+    myInfo[1]=100000;
+    self.dineroLabel.text = [@(myInfo[1]) stringValue];
     // inicia contador
     segundos = 0;
     minutos = 0;
@@ -61,7 +67,7 @@
     //inicializador de state
     myInfo[0] = 1;
     //inicializador de power
-    myInfo[4] = 2;
+    myInfo[4] = 1;
     
     //inicializador de adjustime de todas las maquinas
     onAdjustTime[0]=5;
@@ -99,10 +105,16 @@
     onProdTriangle[5]=1;
     onProdTriangle[5]=8;
     
+    //Inicializar precios de cada material
+    materialPrice[0]=5000;
+    materialPrice[1]=7000;
+    materialPrice[2]=2500;
+    
+    
 
     for (int x=0; x < (sizeof myInfo/sizeof(int)); x++)
     {
-        if(x == numMachine)
+        if(x == (numMachine-1))
         {
             //Inicializacion de variables estaticas
             
@@ -124,6 +136,7 @@
         }
     }
  
+    contadorProd = 0;
     [self createTimer];
     
 }
@@ -149,13 +162,14 @@
 }
 
 - (NSTimer*)createTimer {
-    
     // create timer on run loop
     return [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerTicked:) userInfo:nil repeats:YES];
+    
 }
 
 - (void)timerTicked:(NSTimer*)timer {
     if (myInfo[0] == 1) {
+        [self checkMaterialProduction];
         segundos ++;
         
         if (segundos >= 60) {
@@ -172,7 +186,6 @@
             self.minutosTotalLabel.text = [@ (minutos) stringValue];
     }
 }
-
 
 
 -(void)decodeStringReceived:(NSString *)receivedInfo
@@ -212,7 +225,7 @@
  Pos0 = @"state" 1=Play; 2=Pause; 3=Stop,
  Pos1 =@"money",
  Pos2 =@"machine",
- Pos3 =@"materialActual" 1=Circulo; 2=Cuadrado; 3=Triangulo,
+ Pos3 =@"currentMaterial" 1=Circulo; 2=Cuadrado; 3=Triangulo,
  Pos4 =@"power" 1=Off; 2=On; 3=Adjusting,
  Pos5 =@"materialInCirculo1",
  Pos6 =@"materialInCuadrado2",
@@ -231,25 +244,41 @@ self.entradaTrianguloLabel.text = [@(myInfo[7]) stringValue];
 }
 - (IBAction)agregarCirculo:(id)sender
 {
+    //Agregar material circulo
     if (myInfo[0] == 1){
-    myInfo[5]++;
-    self.entradaCirculoLabel.text = [@(myInfo[5]) stringValue];
+        
+        myInfo[5]++;
+        myInfo[1]= myInfo[1]-materialPrice[0];
+        self.entradaCirculoLabel.text = [@(myInfo[5]) stringValue];
+        self.dineroLabel.text = [@(myInfo[1]) stringValue];
+        if (myInfo[1]<0)
+            self.dineroLabel.textColor = [UIColor redColor];
     }
 
 }
 - (IBAction)agregarCuadrado:(id)sender
 {
-    if (myInfo[0] == 1){
-    myInfo[6]++;
-    self.entradaCuadradoLabel.text = [@(myInfo[6]) stringValue];
+    //Agregar material cuadrado
+    if (myInfo[0] == 1 ){
+        myInfo[6]++;
+        myInfo[1]= myInfo[1]-materialPrice[1];
+        self.entradaCuadradoLabel.text = [@(myInfo[6]) stringValue];
+        self.dineroLabel.text = [@(myInfo[1]) stringValue];
+        if (myInfo[1]<0)
+            self.dineroLabel.textColor = [UIColor redColor];
     }
 
 }
 - (IBAction)agregarTriangulo:(id)sender
 {
+    //Agregar materialTriangulo
     if (myInfo[0] == 1){
-    myInfo[7]++;
-    self.entradaTrianguloLabel.text = [@(myInfo[7]) stringValue];
+        myInfo[7]++;
+        myInfo[1]= myInfo[1]-materialPrice[2];
+        self.entradaTrianguloLabel.text = [@(myInfo[7]) stringValue];
+        self.dineroLabel.text = [@(myInfo[1]) stringValue];
+        if (myInfo[1]<0)
+            self.dineroLabel.textColor = [UIColor redColor];
     }
 }
 
@@ -257,7 +286,8 @@ self.entradaTrianguloLabel.text = [@(myInfo[7]) stringValue];
 - (IBAction)selectCirculoButton:(id)sender
 {
     if (myInfo[0] == 1 && myInfo[4] != 3){
-        myInfo[5]=1;
+        myInfo[3]=1;
+        contadorProd = 0;
         //Actualizar imagen de material seleccionado
         [sender setImage:[UIImage imageNamed:@"circleGreen.png"] forState:UIControlStateNormal];
         [self.square setImage:[UIImage imageNamed:@"square.png"] forState:UIControlStateNormal];
@@ -267,7 +297,8 @@ self.entradaTrianguloLabel.text = [@(myInfo[7]) stringValue];
 - (IBAction)selectCuadradoButton:(id)sender
 {
     if (myInfo[0] == 1 && myInfo[4] != 3){
-        myInfo[5]=2;
+        myInfo[3]=2;
+        contadorProd = 0;
         //Actualizar imagen de material seleccionado
         [sender setImage:[UIImage imageNamed:@"squareGreen.png"] forState:UIControlStateNormal];
         [self.circle setImage:[UIImage imageNamed:@"circle.png"] forState:UIControlStateNormal];
@@ -278,7 +309,8 @@ self.entradaTrianguloLabel.text = [@(myInfo[7]) stringValue];
 - (IBAction)selectTrianguloLabel:(id)sender
 {
     if (myInfo[0] == 1 && myInfo[4] != 3){
-        myInfo[5]=3;
+        myInfo[3]=3;
+        contadorProd = 0;
         //Actualizar imagen de material seleccionado
         [sender setImage:[UIImage imageNamed:@"triangleGreen.png"] forState:UIControlStateNormal];
         [self.circle setImage:[UIImage imageNamed:@"circle.png"] forState:UIControlStateNormal];
@@ -288,19 +320,81 @@ self.entradaTrianguloLabel.text = [@(myInfo[7]) stringValue];
 - (IBAction)changePowerButton:(id)sender
 {
     if (myInfo[0] == 1){
-    
-        if (myInfo[4]==1)
-        {
-            myInfo[4]=2;
-            //Actualizar imagen de estado seleccionado
-            [sender setImage:[UIImage imageNamed:@"powerRed.png"] forState:UIControlStateNormal];
-        }
-        else if (myInfo[4]==2)
+ //   Pos4 =@"power" 1=Off; 2=On; 3=Adjusting,
+        //Cambio de On a Off
+        if (myInfo[4]==2)
         {
             myInfo[4]=1;
             //Actualizar imagen de estado seleccionado
-            [sender setImage:[UIImage imageNamed:@"powerGreen.png"] forState:UIControlStateNormal];
+            [sender setImage:[UIImage imageNamed:@"powerRed.png"] forState:UIControlStateNormal];
+            self.estadoLabel.text=@"Apagada";
+        }
+        //Cambio de Off a Adjusting and then to On
+        else if (myInfo[4]==1)
+        {
+            myInfo[4]=3;
+            self.estadoLabel.text=@"Ajustando";
+            //Actualizar imagen de estado seleccionado
+            [sender setImage:[UIImage imageNamed:@"powerYellow.png"] forState:UIControlStateNormal ];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, onAdjustTime[numMachine -1] * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                [sender setImage:[UIImage imageNamed:@"powerGreen.png"] forState:UIControlStateNormal ];
+                myInfo[4]=2;
+                self.estadoLabel.text=@"Encendida";
+            });
 
+        }
+    }
+    
+}
+-(void) checkMaterialProduction
+{/*
+  Pos0 = @"state" 1=Play; 2=Pause; 3=Stop,
+  Pos1 =@"money",
+  Pos2 =@"machine",
+  Pos3 =@"currentMaterial" 1=Circulo; 2=Cuadrado; 3=Triangulo,
+  Pos4 =@"power" 1=Off; 2=On; 3=Adjusting,
+  Pos5 =@"materialInCirculo1",
+  Pos6 =@"materialInCuadrado2",
+  Pos7 =@"materialInTriangulo3",
+  Pos8 =@"materialOutCirculo1",
+  Pos9 =@"materialOutCuadrado2",
+  Pos10 =@"materialOutTriangulo3",
+  */
+
+    if (myInfo[0] == 1 && myInfo[4]==2) {
+        contadorProd++;
+        NSLog(@"%d",contadorProd);
+        switch (myInfo[3]) {
+            case 1:
+                if (contadorProd == onProdCircle[numMachine-1] && myInfo[5] > 0) {
+                    myInfo[8]++;
+                    contadorProd = 0;
+                    myInfo[5]--;
+                    self.entradaCirculoLabel.text = [@(myInfo[5]) stringValue];
+                    if (myInfo[1]>0)
+                        self.dineroLabel.textColor = [UIColor blackColor];
+                }
+                break;
+            case 2:
+                if (contadorProd == onProdSquare[numMachine-1] && myInfo[6] > 0) {
+                    myInfo[9]++;
+                    contadorProd = 0;
+                    myInfo[6]--;
+                    self.entradaCuadradoLabel.text = [@(myInfo[6]) stringValue];
+                    if (myInfo[1]>0)
+                        self.dineroLabel.textColor = [UIColor blackColor];
+                }
+                break;
+            case 3:
+                if (contadorProd == onProdTriangle[numMachine-1] && myInfo[7] > 0) {
+                    myInfo[10]++;
+                    contadorProd = 0;
+                    myInfo[7]--;
+                    self.entradaTrianguloLabel.text = [@(myInfo[7]) stringValue];
+                    if (myInfo[1]>0)
+                        self.dineroLabel.textColor = [UIColor blackColor];
+                }
+                break;
         }
     }
     

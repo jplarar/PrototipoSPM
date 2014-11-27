@@ -39,7 +39,7 @@ int numMachine;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    numMachine = 1;
+    numMachine = 2;
     
     [self.nameTF setDelegate:self];
     
@@ -149,8 +149,10 @@ int numMachine;
     
     numMachine = [receivedText intValue];
     
-    [self performSegueWithIdentifier:@"IniciarJuego" sender:self];
-    
+    //[self performSegueWithIdentifier:@"IniciarJuego" sender:self];
+    dispatch_async(dispatch_get_main_queue(), ^(void) {
+        [self performSegueWithIdentifier: @"IniciarJuego" sender: self];
+    });
     
     
 }
