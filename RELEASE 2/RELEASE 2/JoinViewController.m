@@ -72,6 +72,7 @@ int numMachine;
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+
 }
 
 
@@ -167,7 +168,6 @@ int numMachine;
         
         // Pass the information to your destination view
         [vc setMachineNumber:numMachine];
-
     }
 }
 

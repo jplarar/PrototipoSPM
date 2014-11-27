@@ -688,12 +688,16 @@
 
 - (IBAction)stopAll:(id)sender {
     
-    machine1[0]=3;
+    machine1[0] =3;
     machine2[0] =3;
     machine3[0] =3;
     machine4[0] =3;
     machine5[0] =3;
     machine6[0] =3;
     machine7[0] =3;
+    
+    
 }
+
+
 @end

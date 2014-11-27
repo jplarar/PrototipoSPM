@@ -56,6 +56,11 @@
     
     
     [super viewDidLoad];
+
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    
     // Do any additional setup after loading the view.
     
     //inicializador de dinero
@@ -119,7 +124,7 @@
                                                object:nil];
     
     
-
+    
     for (int x=0; x < (sizeof myInfo/sizeof(int)); x++)
     {
         if(x == (numMachine-1))
@@ -143,7 +148,7 @@
             self.segundosTrianguloLabel.text = @"00";
         }
     }
- 
+    
     contadorProd = 0;
     [self createTimer];
     
@@ -177,6 +182,11 @@
 
 - (void)timerTicked:(NSTimer*)timer {
     [self sendMyMessage];
+    if (myInfo[0] == 3){
+        dispatch_async(dispatch_get_main_queue(), ^(void) {
+            [self performSegueWithIdentifier: @"finJuego" sender: self];
+        });
+    }
     if (myInfo[0] == 1) {
         [self checkMaterialProduction];
         segundos ++;
@@ -413,7 +423,9 @@ self.entradaTrianguloLabel.text = [@(myInfo[7]) stringValue];
     
 }
 -(void) checkMaterialProduction
-{/*
+{
+    
+/*
   Pos0 = @"state" 1=Play; 2=Pause; 3=Stop,
   Pos1 =@"money",
   Pos2 =@"machine",
