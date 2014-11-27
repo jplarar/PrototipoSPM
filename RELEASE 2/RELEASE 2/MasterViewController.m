@@ -21,6 +21,12 @@
     int machine6[11];
     int machine7[11];
     
+    int segundosInt;
+    int minutosInt;
+    UIBarButtonItem *time;
+    //Inicializar precios de cada material
+    int prodPrice[3];
+    
 }
     
 @property (nonatomic, strong) AppDelegate *appDelegate;
@@ -46,6 +52,7 @@
         machine7[x] =0;
 
     }
+    [self playAll];
 }
 
 -(void)decodeStringReceived:(NSString *)receivedInfo
@@ -84,39 +91,72 @@
             {
                 machine2[x] =receivedInfoInt[x];
             }
+            machine2[5] =machine1[8];
+            machine2[6] =machine1[9];
+            machine2[7] =machine1[10];
             break;
         case 3:
             for (int x =0; x<11; x++)
             {
                 machine3[x] =receivedInfoInt[x];
             }
+            machine3[5] =machine2[8];
+            machine3[6] =machine2[9];
+            machine3[7] =machine2[10];
             break;
         case 4:
             for (int x =0; x<11; x++)
             {
                 machine4[x] =receivedInfoInt[x];
             }
+            machine4[5] =machine3[8];
+            machine4[6] =machine3[9];
+            machine4[7] =machine3[10];
             break;
         case 5:
             for (int x =0; x<11; x++)
             {
                 machine5[x] =receivedInfoInt[x];
             }
+            machine5[5] =machine4[8];
+            machine5[6] =machine4[9];
+            machine5[7] =machine4[10];
             break;
         case 6:
             for (int x =0; x<11; x++)
             {
                 machine6[x] =receivedInfoInt[x];
             }
+            machine6[5] =machine5[8];
+            machine6[6] =machine5[9];
+            machine6[7] =machine5[10];
             break;
         case 7:
             for (int x =0; x<11; x++)
             {
                 machine7[x] =receivedInfoInt[x];
             }
+            machine7[5] =machine6[8];
+            machine7[6] =machine6[9];
+            machine7[7] =machine6[10];
             break;
 
     }
+
+    machine1[1] = machine1[1] +(machine7[8] * prodPrice[0]) + (machine7[9] * prodPrice[1]) + (machine7[10] * prodPrice[1]);
+        
+    for (int x =8; x<11; x++)
+    {
+        machine1[x] =0;
+        machine2[x] =0;
+        machine3[x] =0;
+        machine4[x] =0;
+        machine5[x] =0;
+        machine6[x] =0;
+        machine7[x] =0;
+    }
+    
+    
     
     
 }
@@ -129,6 +169,10 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    //Inicializar precios de cada material
+    prodPrice[0]=7000;
+    prodPrice[1]=4000;
+    prodPrice[2]=10000;
     
     _appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
@@ -141,18 +185,22 @@
     
     minuto = @"00";
     segundos = @"00";
+    
+    minutosInt = 0;
+    segundosInt = 0;
 
     NSString *tiempo = [NSString stringWithFormat: @"%@:%@", minuto, segundos];
-    UIBarButtonItem *play = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:@selector(playAll:)];
+    UIBarButtonItem *play = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:@selector(playAll)];
     
-    UIBarButtonItem *pause = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPause target:self action:@selector(pauseAll:)];
+    UIBarButtonItem *pause = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPause target:self action:@selector(pauseAll)];
     
-    UIBarButtonItem *time = [[UIBarButtonItem alloc]initWithTitle:tiempo
-                                                            style:UIBarButtonItemStylePlain
-                                                           target:self
-                                                           action:nil];
-    // asi se actualiza tiempo
-    time.title = @"hola";
+    time = [[UIBarButtonItem alloc]initWithTitle:tiempo
+                                    style:UIBarButtonItemStylePlain
+                                   target:self
+                                   action:nil];
+    
+        // asi se actualiza tiempo
+    time.title = @"00:00";
     
     self.navigationItem.rightBarButtonItems =
     [NSArray arrayWithObjects:pause, play, time, nil];
@@ -161,6 +209,38 @@
     
     [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateMachines:) userInfo:nil repeats:YES];
     
+    [self createTimer];
+    
+}
+
+- (NSTimer*)createTimer {
+    // create timer on run loop
+    return [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerTicked:) userInfo:nil repeats:YES];
+    
+}
+
+- (void)timerTicked:(NSTimer*)timer {
+    if (machine1[0] == 1) {
+        segundosInt ++;
+        
+        if (segundosInt >= 60) {
+            segundosInt = 0;
+            minutosInt ++;
+        }
+        if (segundosInt <= 9)
+            segundos = [NSString stringWithFormat: @"0%d", segundosInt];
+        else
+            segundos = [@(segundosInt) stringValue];
+        if (minutosInt <= 9)
+            minuto = [NSString stringWithFormat: @"0%d", minutosInt];
+        else
+            minuto = [@ (minutosInt) stringValue];
+        
+        NSString *tiempo = [NSString stringWithFormat: @"%@:%@", minuto, segundos];
+        
+
+        time.title = tiempo;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
