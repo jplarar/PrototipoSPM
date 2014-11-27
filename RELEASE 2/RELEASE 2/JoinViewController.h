@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "MachineViewController.h"
 #import <MultipeerConnectivity/MultipeerConnectivity.h>
 
 @interface JoinViewController : ViewController <MCBrowserViewControllerDelegate, UITextFieldDelegate>

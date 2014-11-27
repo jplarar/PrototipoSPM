@@ -1,18 +1,23 @@
+
+//  ConnectionsViewController.m
+//  MCDemo
 //
-//  JoinViewController.m
-//  RELEASE 2
-//
-//  Created by Juan Paulo Lara on 11/17/14.
-//  Copyright (c) 2014 JuanPauloLara. All rights reserved.
+//  Created by Gabriel Theodoropoulos on 1/6/14.
+//  Copyright (c) 2014 Appcoda. All rights reserved.
 //
 
 #import "JoinViewController.h"
 #import "AppDelegate.h"
-#import "MachineViewController.h"
 
 @interface JoinViewController ()
 
 @property (nonatomic, strong) AppDelegate *appDelegate;
+@property (nonatomic, strong) NSMutableArray *arrConnectedDevices;
+
+-(void)peerDidChangeStateWithNotification:(NSNotification *)notification;
+
+-(void)didReceiveDataWithNotification:(NSNotification *)notification;
+
 
 @end
 
@@ -20,9 +25,21 @@
 
 int numMachine;
 
-- (void)viewDidLoad {
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    numMachine = 1;
     
     [self.nameTF setDelegate:self];
     
@@ -36,15 +53,40 @@ int numMachine;
     [self.view addSubview:spinner];
     [spinner startAnimating];
     
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(peerDidChangeStateWithNotification:)
+                                                 name:@"MCDidChangeStateNotification"
+                                               object:nil];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(didReceiveDataWithNotification:)
                                                  name:@"MCDidReceiveDataNotification"
                                                object:nil];
+    
+    _arrConnectedDevices = [[NSMutableArray alloc] init];
+    
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+
+
+
+
+- (IBAction)toggleVisibility:(id)sender {
+    [_appDelegate.mcManager advertiseSelf:YES];
+}
+
+
+- (IBAction)disconnect:(id)sender {
+    [_appDelegate.mcManager.session disconnect];
+    
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
@@ -63,6 +105,39 @@ int numMachine;
     [_appDelegate.mcManager advertiseSelf:YES];
     
     return YES;
+}
+
+
+#pragma mark - MCBrowserViewControllerDelegate method implementation
+
+-(void)browserViewControllerDidFinish:(MCBrowserViewController *)browserViewController{
+    [_appDelegate.mcManager.browser dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+-(void)browserViewControllerWasCancelled:(MCBrowserViewController *)browserViewController{
+    [_appDelegate.mcManager.browser dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+#pragma mark - Private method implementation
+
+-(void)peerDidChangeStateWithNotification:(NSNotification *)notification{
+    MCPeerID *peerID = [[notification userInfo] objectForKey:@"peerID"];
+    NSString *peerDisplayName = peerID.displayName;
+    MCSessionState state = [[[notification userInfo] objectForKey:@"state"] intValue];
+    
+    if (state != MCSessionStateConnecting) {
+        if (state == MCSessionStateConnected) {
+            [_arrConnectedDevices addObject:peerDisplayName];
+        }
+        else if (state == MCSessionStateNotConnected){
+            if ([_arrConnectedDevices count] > 0) {
+                int indexOfPeer = [_arrConnectedDevices indexOfObject:peerDisplayName];
+                [_arrConnectedDevices removeObjectAtIndex:indexOfPeer];
+            }
+        }
+    }
 }
 
 -(void)didReceiveDataWithNotification:(NSNotification *)notification{
@@ -89,18 +164,41 @@ int numMachine;
         
         
         // Pass the information to your destination view
-        [vc setMachineNumber:numMachine];
+         [vc setMachineNumber:numMachine];
     }
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
+#pragma mark - UITableView Delegate and Datasource method implementation
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
 }
-*/
+
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [_arrConnectedDevices count];
+}
+
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+    }
+    
+    cell.textLabel.text = [_arrConnectedDevices objectAtIndex:indexPath.row];
+    
+    return cell;
+}
+
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 60.0;
+}
+
 
 @end
+

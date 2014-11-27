@@ -91,11 +91,15 @@
 
 -(void)browserViewControllerDidFinish:(MCBrowserViewController *)browserViewController{
     [_appDelegate.mcManager.browser dismissViewControllerAnimated:YES completion:nil];
+    [_tblConnectedDevices reloadData];
+
 }
 
 
 -(void)browserViewControllerWasCancelled:(MCBrowserViewController *)browserViewController{
     [_appDelegate.mcManager.browser dismissViewControllerAnimated:YES completion:nil];
+    [_tblConnectedDevices reloadData];
+
 }
 
 
@@ -109,6 +113,7 @@
     // Pass the selected object to the new view controller.
 }
 */
+
 
 -(void)peerDidChangeStateWithNotification:(NSNotification *)notification{
     MCPeerID *peerID = [[notification userInfo] objectForKey:@"peerID"];
@@ -126,7 +131,7 @@
             }
         }
         [_tblConnectedDevices reloadData];
-        
+
     }
 }
 
@@ -144,10 +149,11 @@
     
     for (int i = 0; i < [_arrConnectedDevices count]; i++)
     {
+        NSArray *arreglo = @[allPeers[i]];
         NSString *numMaquina = [NSString stringWithFormat:@"%d", i+1];
         dataToSend  = [numMaquina dataUsingEncoding:NSUTF8StringEncoding];
         [_appDelegate.mcManager.session sendData:dataToSend
-                                         toPeers:_arrConnectedDevices[i]
+                                         toPeers:arreglo
                                         withMode:MCSessionSendDataReliable
                                            error:&error];
     }
