@@ -7,8 +7,11 @@
 //
 
 #import "JoinViewController.h"
+#import "AppDelegate.h"
 
 @interface JoinViewController ()
+
+@property (nonatomic, strong) AppDelegate *appDelegate;
 
 @end
 
@@ -17,11 +20,41 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self.nameTF setDelegate:self];
+    
+    _appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [[_appDelegate mcManager] setupPeerAndSessionWithDisplayName:[UIDevice currentDevice].name];
+    [[_appDelegate mcManager] advertiseSelf:YES];
+    
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    spinner.center = CGPointMake(512, 460);
+    spinner.tag = 12;
+    [self.view addSubview:spinner];
+    [spinner startAnimating];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [self.nameTF resignFirstResponder];
+    
+    _appDelegate.mcManager.peerID = nil;
+    _appDelegate.mcManager.session = nil;
+    _appDelegate.mcManager.browser = nil;
+    
+    [_appDelegate.mcManager.advertiser stop];
+    _appDelegate.mcManager.advertiser = nil;
+    
+    
+    [_appDelegate.mcManager setupPeerAndSessionWithDisplayName:self.nameTF.text];
+    [_appDelegate.mcManager setupMCBrowser];
+    [_appDelegate.mcManager advertiseSelf:YES];
+    
+    return YES;
 }
 
 /*

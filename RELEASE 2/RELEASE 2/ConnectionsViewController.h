@@ -47,7 +47,9 @@
 #import <MultipeerConnectivity/MultipeerConnectivity.h>
 
 @interface ConnectionsViewController : UIViewController <MCBrowserViewControllerDelegate, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource>
+@property (strong, nonatomic) IBOutlet UITableView *tblConnectedDevices;
 
 - (IBAction)browseForDevices:(id)sender;
+
 
 @end
