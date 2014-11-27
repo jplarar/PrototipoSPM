@@ -9,5 +9,13 @@
 #import "ViewController.h"
 
 @interface DetailViewController : ViewController
+@property (strong, nonatomic) IBOutlet UILabel *minutosTotalLabel;
+@property (strong, nonatomic) IBOutlet UILabel *segundosTotalLabel;
+@property (strong, nonatomic) IBOutlet UILabel *numeroMaquinaLabel;
+@property (strong, nonatomic) IBOutlet UILabel *dineroLabel;
+@property (strong, nonatomic) IBOutlet UIButton *estadoMaquina;
+
+@property (strong, nonatomic) IBOutlet UILabel *minutosAjusteLabel;
+@property (strong, nonatomic) IBOutlet UILabel *segundosAjusteLabel;
 
 @end

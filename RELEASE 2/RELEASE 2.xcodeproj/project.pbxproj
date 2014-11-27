@@ -31,7 +31,6 @@
 		C12EF42A1A1AF2C30053C202 /* deliver.png in Resources */ = {isa = PBXBuildFile; fileRef = C12EF4251A1AF2C30053C202 /* deliver.png */; };
 		C12EF42B1A1AF2C30053C202 /* gears3.png in Resources */ = {isa = PBXBuildFile; fileRef = C12EF4261A1AF2C30053C202 /* gears3.png */; };
 		C12EF42C1A1AF2C30053C202 /* carrito.png in Resources */ = {isa = PBXBuildFile; fileRef = C12EF4271A1AF2C30053C202 /* carrito.png */; };
-		C12EF42E1A1AF7A20053C202 /* triangle.png in Resources */ = {isa = PBXBuildFile; fileRef = C12EF42D1A1AF7A20053C202 /* triangle.png */; };
 		C12EF4301A1AF89A0053C202 /* people.png in Resources */ = {isa = PBXBuildFile; fileRef = C12EF42F1A1AF89A0053C202 /* people.png */; };
 		C12EF4321A1AF9930053C202 /* box.png in Resources */ = {isa = PBXBuildFile; fileRef = C12EF4311A1AF9930053C202 /* box.png */; };
 		C12EF4341A1AFA5C0053C202 /* gastos.png in Resources */ = {isa = PBXBuildFile; fileRef = C12EF4331A1AFA5C0053C202 /* gastos.png */; };
@@ -43,6 +42,8 @@
 		C12EF4801A1B0B080053C202 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C12EF47F1A1B0B080053C202 /* MasterViewController.m */; };
 		C12EF4831A1B0B430053C202 /* MachineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C12EF4821A1B0B430053C202 /* MachineViewController.m */; };
 		C12EF4861A1B0B820053C202 /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C12EF4851A1B0B820053C202 /* ResultsViewController.m */; };
+		C15B6FFE1A26D09500B0157A /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = C15B6FFD1A26D09500B0157A /* add.png */; };
+		C15B70001A26D1A000B0157A /* triangle.png in Resources */ = {isa = PBXBuildFile; fileRef = C15B6FFF1A26D1A000B0157A /* triangle.png */; };
 		FB03582B1A24275800F585C0 /* Captura de pantalla de Simulador iOS 24.11.2014 20.46.31.png in Resources */ = {isa = PBXBuildFile; fileRef = FB03582A1A24275800F585C0 /* Captura de pantalla de Simulador iOS 24.11.2014 20.46.31.png */; };
 /* End PBXBuildFile section */
 
@@ -87,7 +88,6 @@
 		C12EF4251A1AF2C30053C202 /* deliver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = deliver.png; sourceTree = "<group>"; };
 		C12EF4261A1AF2C30053C202 /* gears3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gears3.png; sourceTree = "<group>"; };
 		C12EF4271A1AF2C30053C202 /* carrito.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = carrito.png; sourceTree = "<group>"; };
-		C12EF42D1A1AF7A20053C202 /* triangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = triangle.png; sourceTree = "<group>"; };
 		C12EF42F1A1AF89A0053C202 /* people.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = people.png; sourceTree = "<group>"; };
 		C12EF4311A1AF9930053C202 /* box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = box.png; sourceTree = "<group>"; };
 		C12EF4331A1AFA5C0053C202 /* gastos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gastos.png; sourceTree = "<group>"; };
@@ -106,6 +106,8 @@
 		C12EF4821A1B0B430053C202 /* MachineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MachineViewController.m; sourceTree = "<group>"; };
 		C12EF4841A1B0B820053C202 /* ResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsViewController.h; sourceTree = "<group>"; };
 		C12EF4851A1B0B820053C202 /* ResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsViewController.m; sourceTree = "<group>"; };
+		C15B6FFD1A26D09500B0157A /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
+		C15B6FFF1A26D1A000B0157A /* triangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = triangle.png; sourceTree = "<group>"; };
 		FB03582A1A24275800F585C0 /* Captura de pantalla de Simulador iOS 24.11.2014 20.46.31.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Captura de pantalla de Simulador iOS 24.11.2014 20.46.31.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -204,12 +206,13 @@
 		C12EF41C1A1AF0790053C202 /* img */ = {
 			isa = PBXGroup;
 			children = (
+				C15B6FFF1A26D1A000B0157A /* triangle.png */,
+				C15B6FFD1A26D09500B0157A /* add.png */,
 				FB03582A1A24275800F585C0 /* Captura de pantalla de Simulador iOS 24.11.2014 20.46.31.png */,
 				C12EF4351A1AFAE00053C202 /* stats.png */,
 				C12EF4331A1AFA5C0053C202 /* gastos.png */,
 				C12EF4311A1AF9930053C202 /* box.png */,
 				C12EF42F1A1AF89A0053C202 /* people.png */,
-				C12EF42D1A1AF7A20053C202 /* triangle.png */,
 				C12EF4231A1AF2C30053C202 /* admin.png */,
 				C12EF4241A1AF2C30053C202 /* moneybag.png */,
 				C12EF4251A1AF2C30053C202 /* deliver.png */,
@@ -311,6 +314,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C15B6FFE1A26D09500B0157A /* add.png in Resources */,
 				C12EF3EA1A1AD0230053C202 /* Main.storyboard in Resources */,
 				C12EF4281A1AF2C30053C202 /* admin.png in Resources */,
 				C12EF4121A1AEE0F0053C202 /* money.png in Resources */,
@@ -332,10 +336,10 @@
 				C12EF4201A1AF1B60053C202 /* gear2.png in Resources */,
 				C12EF41A1A1AF0720053C202 /* square.png in Resources */,
 				C12EF4211A1AF1B60053C202 /* gears.png in Resources */,
+				C15B70001A26D1A000B0157A /* triangle.png in Resources */,
 				C12EF4221A1AF1B60053C202 /* time3.png in Resources */,
 				C12EF4111A1AEE0F0053C202 /* power.png in Resources */,
 				C12EF42B1A1AF2C30053C202 /* gears3.png in Resources */,
-				C12EF42E1A1AF7A20053C202 /* triangle.png in Resources */,
 				C12EF4291A1AF2C30053C202 /* moneybag.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

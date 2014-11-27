@@ -8,7 +8,12 @@
 
 #import "MasterViewController.h"
 
-@interface MasterViewController ()
+@interface MasterViewController (){
+    
+    NSString *minuto;
+    NSString *segundos;
+    
+}
 
 @end
 
@@ -22,6 +27,24 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    minuto = @"00";
+    segundos = @"00";
+
+    NSString *tiempo = [NSString stringWithFormat: @"%@:%@", minuto, segundos];
+    UIBarButtonItem *play = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:@selector(playAll)];
+    
+    UIBarButtonItem *pause = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPause target:self action:@selector(pauseAll)];
+    
+    UIBarButtonItem *time = [[UIBarButtonItem alloc]initWithTitle:tiempo
+                                                            style:UIBarButtonItemStylePlain
+                                                           target:self
+                                                           action:nil];
+    // asi se actualiza tiempo
+    time.title = @"hola";
+    
+    self.navigationItem.rightBarButtonItems =
+    [NSArray arrayWithObjects:pause, play, time, nil];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,15 +55,13 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 3;
+    return 7;
 }
 
 -(IBAction)unWindMasterController:(UIStoryboardSegue *)segue

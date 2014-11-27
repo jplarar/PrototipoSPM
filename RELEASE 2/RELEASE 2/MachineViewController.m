@@ -34,4 +34,12 @@
 }
 */
 
+- (IBAction)agregarCirculo:(id)sender {
+}
+
+- (IBAction)agregarCuadrado:(id)sender {
+}
+
+- (IBAction)agregarTriangulo:(id)sender {
+}
 @end
