@@ -201,20 +201,10 @@
 {
     NSArray *machinesInfo = [receivedInfo componentsSeparatedByString:@"/"];
     NSArray *myReceivedInfo= [machinesInfo[numMachine-1] componentsSeparatedByString:@"_"];
-
     
     myInfo[0] = [myReceivedInfo[0] intValue];
     myInfo[1] = [myReceivedInfo[1] intValue];
-    if(numMachine >1)
-    {
-        myInfo[5] = [myReceivedInfo[5] intValue];
-        myInfo[6] = [myReceivedInfo[6] intValue];
-        myInfo[7] = [myReceivedInfo[7] intValue];
-
-    }
     
-
-
     [self update];
     
     
