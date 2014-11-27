@@ -164,7 +164,11 @@ int numMachine;
         
         
         // Pass the information to your destination view
+<<<<<<< HEAD
          [vc setMachineNumber:numMachine];
+=======
+        //[vc setMachineNumber:numMachine];
+>>>>>>> FETCH_HEAD
     }
 }
 
