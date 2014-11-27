@@ -26,6 +26,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *materialMaquina6;
 @property (strong, nonatomic) IBOutlet UIImageView *materialMaquina7;
 
+- (IBAction)stopAll:(id)sender;
 
 
 

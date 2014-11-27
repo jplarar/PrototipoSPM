@@ -797,7 +797,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Maquinas" id="RJh-bF-jqx">
-                        <barButtonItem key="leftBarButtonItem" title="Terminar Sesion" id="c0w-6z-gz6"/>
+                        <barButtonItem key="leftBarButtonItem" title="Terminar Sesion" id="c0w-6z-gz6">
+                            <connections>
+                                <action selector="stopAll:" destination="z1h-Mh-6AX" id="cT8-Kd-KJO"/>
+                                <segue destination="Srv-pJ-jV1" kind="modal" id="utq-kr-KA2"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
@@ -819,7 +824,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P3O-mA-NcX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4053" y="143"/>
+            <point key="canvasLocation" x="3947" y="150"/>
         </scene>
         <!--Machine View Controller-->
         <scene sceneID="d2Q-bd-PHf">
@@ -1125,7 +1130,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QYL-x4-AZ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2790" y="162"/>
+            <point key="canvasLocation" x="2789" y="150"/>
         </scene>
     </scenes>
     <resources>
@@ -1154,4 +1159,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="utq-kr-KA2"/>
+    </inferredMetricsTieBreakers>
 </document>
