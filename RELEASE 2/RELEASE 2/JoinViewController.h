@@ -12,4 +12,5 @@
 @interface JoinViewController : ViewController <MCBrowserViewControllerDelegate, UITextFieldDelegate>
 @property (strong, nonatomic) IBOutlet UITextField *nameTF;
 
+
 @end

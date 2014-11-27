@@ -108,9 +108,6 @@
                                 <state key="normal" image="gears3.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="OO0-7z-Ynf" kind="modal" id="HQV-k6-wth"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ALd-sz-RLJ">
                                 <rect key="frame" x="56" y="47" width="143" height="61"/>
@@ -129,6 +126,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
                         <outlet property="nameTF" destination="dZ9-sT-bOJ" id="1lJ-dV-dWA"/>
+                        <segue destination="OO0-7z-Ynf" kind="modal" identifier="IniciarJuego" id="vyK-zM-pqW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u0M-O6-dCi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -175,6 +173,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="startGame:" destination="dJw-dd-8Cm" eventType="touchUpInside" id="zuk-cf-xVF"/>
                                     <segue destination="gDq-9T-igI" kind="modal" id="dlQ-iY-j7T"/>
                                 </connections>
                             </button>
@@ -1031,9 +1030,12 @@
                                 <state key="normal" image="add.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+<<<<<<< HEAD
                                 <connections>
                                     <action selector="agregarCirculo:" destination="OO0-7z-Ynf" eventType="touchUpInside" id="a3i-1z-HAR"/>
                                 </connections>
+=======
+>>>>>>> FETCH_HEAD
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="77f-l5-c8K">
                                 <rect key="frame" x="183" y="538" width="50" height="50"/>
@@ -1067,6 +1069,7 @@
                     </view>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
+<<<<<<< HEAD
                         <outlet property="circuloImageView" destination="cha-EA-aI5" id="2It-UL-xdH"/>
                         <outlet property="cuadradoImageView" destination="lXT-4B-zEd" id="oMQ-Qo-Uix"/>
                         <outlet property="dineroLabel" destination="dXq-Zc-RTJ" id="D8x-dn-UGf"/>
@@ -1087,6 +1090,9 @@
                         <outlet property="segundosTotalLabel" destination="3rO-Xo-qOd" id="6kX-nx-kV2"/>
                         <outlet property="segundosTrianguloLabel" destination="9eh-B6-TfP" id="7ew-X1-I61"/>
                         <outlet property="trianguloImageView" destination="rhL-Yi-8lM" id="IOW-XX-EOk"/>
+=======
+                        <segue destination="Srv-pJ-jV1" kind="modal" id="KRt-PG-BuJ"/>
+>>>>>>> FETCH_HEAD
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5yv-Lk-vMW" userLabel="First Responder" sceneMemberID="firstResponder"/>

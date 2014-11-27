@@ -8,6 +8,7 @@
 
 #import "JoinViewController.h"
 #import "AppDelegate.h"
+#import "MachineViewController.h"
 
 @interface JoinViewController ()
 
@@ -16,6 +17,8 @@
 @end
 
 @implementation JoinViewController
+
+int numMachine;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,6 +35,11 @@
     spinner.tag = 12;
     [self.view addSubview:spinner];
     [spinner startAnimating];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(didReceiveDataWithNotification:)
+                                                 name:@"MCDidReceiveDataNotification"
+                                               object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,6 +63,34 @@
     [_appDelegate.mcManager advertiseSelf:YES];
     
     return YES;
+}
+
+-(void)didReceiveDataWithNotification:(NSNotification *)notification{
+    MCPeerID *peerID = [[notification userInfo] objectForKey:@"peerID"];
+    NSString *peerDisplayName = peerID.displayName;
+    
+    NSData *receivedData = [[notification userInfo] objectForKey:@"data"];
+    NSString *receivedText = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
+    
+    numMachine = [receivedText intValue];
+    
+    [self performSegueWithIdentifier:@"IniciarJuego" sender:self];
+    
+    
+    
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"IniciarJuego"]) {
+        
+        // Get destination view
+        MachineViewController *vc = [segue destinationViewController];
+        
+        
+        // Pass the information to your destination view
+        [vc setMachineNumber:numMachine];
+    }
 }
 
 /*

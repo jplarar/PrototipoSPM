@@ -136,6 +136,28 @@
     [self presentViewController:[[_appDelegate mcManager] browser] animated:YES completion:nil];
 }
 
+- (IBAction)startGame:(id)sender {
+    NSData *dataToSend;
+        NSArray *allPeers = _appDelegate.mcManager.session.connectedPeers;
+        NSError *error;
+    
+    
+    for (int i = 0; i < [_arrConnectedDevices count]; i++)
+    {
+        NSString *numMaquina = [NSString stringWithFormat:@"%d", i+1];
+        dataToSend  = [numMaquina dataUsingEncoding:NSUTF8StringEncoding];
+        [_appDelegate.mcManager.session sendData:dataToSend
+                                         toPeers:_arrConnectedDevices[i]
+                                        withMode:MCSessionSendDataReliable
+                                           error:&error];
+    }
+    
+        
+        if (error) {
+            NSLog(@"%@", [error localizedDescription]);
+        }
+}
+
 
 #pragma mark - UITableView Delegate and Datasource method implementation
 
