@@ -10,6 +10,7 @@
 
 @interface MachineViewController ()
 {
+    
     int numMachine;
     int myInfo[11];
     int onAdjustTime[7];

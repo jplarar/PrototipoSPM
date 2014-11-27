@@ -36,6 +36,8 @@
 - (IBAction)selectTrianguloLabel:(id)sender;
 - (IBAction)changePowerButton:(id)sender;
 
+-(void)setMachineNumber:(int)num;
+
 
 //agregar materiales
 - (IBAction)agregarCirculo:(id)sender;
