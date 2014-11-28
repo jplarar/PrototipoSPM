@@ -9,7 +9,9 @@
 #import "JoinViewController.h"
 #import "AppDelegate.h"
 
-@interface JoinViewController ()
+@interface JoinViewController (){
+    BOOL ENTRA;
+}
 
 @property (nonatomic, strong) AppDelegate *appDelegate;
 @property (nonatomic, strong) NSMutableArray *arrConnectedDevices;
@@ -39,6 +41,8 @@ int numMachine;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    ENTRA = true;
+    
     numMachine = 2;
     
     [self.nameTF setDelegate:self];
@@ -58,12 +62,12 @@ int numMachine;
                                              selector:@selector(peerDidChangeStateWithNotification:)
                                                  name:@"MCDidChangeStateNotification"
                                                object:nil];
-    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(didReceiveDataWithNotification:)
                                                  name:@"MCDidReceiveDataNotification"
                                                object:nil];
     
+
     _arrConnectedDevices = [[NSMutableArray alloc] init];
     
 }
@@ -142,19 +146,23 @@ int numMachine;
 }
 
 -(void)didReceiveDataWithNotification:(NSNotification *)notification{
+    if (ENTRA) {
+
     MCPeerID *peerID = [[notification userInfo] objectForKey:@"peerID"];
     NSString *peerDisplayName = peerID.displayName;
     
     NSData *receivedData = [[notification userInfo] objectForKey:@"data"];
     NSString *receivedText = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
     
-    numMachine = [receivedText intValue];
-    
+    numMachine = 2;
+    NSLog(@"HOLA");
     //[self performSegueWithIdentifier:@"IniciarJuego" sender:self];
     dispatch_async(dispatch_get_main_queue(), ^(void) {
         [self performSegueWithIdentifier: @"IniciarJuego" sender: self];
     });
     
+       ENTRA = false;
+    }
     
 }
 

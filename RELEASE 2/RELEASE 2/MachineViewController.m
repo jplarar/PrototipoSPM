@@ -35,7 +35,6 @@
     int minutos;
     int contadorProd;
     
-    
 }
 @end
 
@@ -56,12 +55,19 @@
     
     
     [super viewDidLoad];
-
-}
-
--(void)viewDidAppear:(BOOL)animated{
     
     // Do any additional setup after loading the view.
+    myInfo[0] = 1;
+    myInfo[1] = 100000;
+    myInfo[2] = numMachine;
+    myInfo[3] = 0;
+    myInfo[4] = 2;
+    myInfo[5] = 0;
+    myInfo[6] = 0;
+    myInfo[7] = 0;
+    myInfo[8] = 0;
+    myInfo[9] = 0;
+    myInfo[10] = 0;
     
     //inicializador de dinero
     myInfo[1]=100000;
@@ -151,6 +157,12 @@
     
     contadorProd = 0;
     [self createTimer];
+
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    
+   
     
 }
 
@@ -249,7 +261,6 @@
     numMachine = num;
     NSString *strNum = [@(num) stringValue];
     self.numeroMaquinaLabel.text = strNum;
-    myInfo[2]=numMachine;
 }
 -(void)update
 {
@@ -441,7 +452,6 @@ self.entradaTrianguloLabel.text = [@(myInfo[7]) stringValue];
 
     if (myInfo[0] == 1 && myInfo[4]==2) {
         contadorProd++;
-        NSLog(@"%d",contadorProd);
         switch (myInfo[3]) {
             case 1:
                 if (contadorProd == onProdCircle[numMachine-1] && myInfo[5] > 0) {
