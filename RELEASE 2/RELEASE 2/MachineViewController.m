@@ -11,7 +11,6 @@
 @interface MachineViewController ()
 {
     
-    int numMachine;
     int myInfo[11];
     int onAdjustTime[7];
     int onProdCircle[7];
@@ -34,12 +33,16 @@
     int segundos;
     int minutos;
     int contadorProd;
+    int numMachine;
     
 }
 @end
 
 @implementation MachineViewController
 
+-(void) setNumMachine:(int)num {
+    _numMachine = num;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -55,7 +58,8 @@
     
     
     [super viewDidLoad];
-    
+    numMachine = self.numMachine;
+    self.numeroMaquinaLabel.text = [NSString stringWithFormat:@"0%d", numMachine];
     // Do any additional setup after loading the view.
     myInfo[0] = 1;
     myInfo[1] = 100000;
@@ -256,12 +260,6 @@
     return encodedString;
 }
 
--(void)setMachineNumber:(int)num
-{
-    numMachine = num;
-    NSString *strNum = [@(num) stringValue];
-    self.numeroMaquinaLabel.text = strNum;
-}
 -(void)update
 {
 /*

@@ -154,7 +154,7 @@ int numMachine;
     NSData *receivedData = [[notification userInfo] objectForKey:@"data"];
     NSString *receivedText = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
     
-    numMachine = 2;
+    numMachine = 1;
     NSLog(@"HOLA");
     //[self performSegueWithIdentifier:@"IniciarJuego" sender:self];
     dispatch_async(dispatch_get_main_queue(), ^(void) {
@@ -175,7 +175,7 @@ int numMachine;
         
         
         // Pass the information to your destination view
-        [vc setMachineNumber:numMachine];
+        [vc setNumMachine:numMachine];
     }
 }
 

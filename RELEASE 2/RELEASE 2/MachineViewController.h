@@ -49,6 +49,8 @@
 
 @property (nonatomic, strong) AppDelegate *appDelegate;
 
+@property int numMachine;
+
 -(void)didReceiveDataWithNotification:(NSNotification *)notification;
 
 @end
