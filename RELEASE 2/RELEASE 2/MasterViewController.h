@@ -28,6 +28,13 @@
 
 - (IBAction)stopAll:(id)sender;
 
+- (IBAction)verDetalle1:(id)sender;
+- (IBAction)verDetalle2:(id)sender;
+- (IBAction)verDetalle3:(id)sender;
+- (IBAction)verDetalle4:(id)sender;
+- (IBAction)verDetalle5:(id)sender;
+- (IBAction)verDetalle6:(id)sender;
+- (IBAction)verDetalle7:(id)sender;
 
 
 @end
