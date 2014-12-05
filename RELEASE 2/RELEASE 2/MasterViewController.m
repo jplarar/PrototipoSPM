@@ -114,11 +114,7 @@
             machine7[1]=machine1[1];
             break;
         case 2:
-<<<<<<< HEAD
             for (int x =1; x<11; x++)
-=======
-            for (int x =0; x<11; x++)
->>>>>>> FETCH_HEAD
             {
                 machine2[x] =receivedInfoInt[x];
             }
@@ -128,11 +124,7 @@
             machine3[7] =machine2[10];
             break;
         case 3:
-<<<<<<< HEAD
             for (int x =1; x<11; x++)
-=======
-            for (int x =0; x<11; x++)
->>>>>>> FETCH_HEAD
             {
                 machine3[x] =receivedInfoInt[x];
             }
@@ -142,11 +134,7 @@
             machine4[7] =machine3[10];
             break;
         case 4:
-<<<<<<< HEAD
             for (int x =1; x<11; x++)
-=======
-            for (int x =0; x<11; x++)
->>>>>>> FETCH_HEAD
             {
                 machine4[x] =receivedInfoInt[x];
             }
@@ -156,11 +144,7 @@
             machine5[7] =machine4[10];
             break;
         case 5:
-<<<<<<< HEAD
             for (int x =1; x<11; x++)
-=======
-            for (int x =0; x<11; x++)
->>>>>>> FETCH_HEAD
             {
                 machine5[x] =receivedInfoInt[x];
             }
@@ -170,11 +154,7 @@
             machine6[7] =machine5[10];
             break;
         case 6:
-<<<<<<< HEAD
             for (int x =1; x<11; x++)
-=======
-            for (int x =0; x<11; x++)
->>>>>>> FETCH_HEAD
             {
                 machine6[x] =receivedInfoInt[x];
             }
@@ -184,25 +164,14 @@
             machine7[7] =machine6[10];
             break;
         case 7:
-<<<<<<< HEAD
             for (int x =1; x<11; x++)
             {
                 machine7[x] =receivedInfoInt[x];
             }
             machine1[1] = machine1[1] +(machine7[8] * prodPrice[0]) + (machine7[9] * prodPrice[1]) + (machine7[10] * prodPrice[1]);
             break;
-=======
-            for (int x =0; x<11; x++)
-            {
-                machine7[x] =receivedInfoInt[x];
-            }
-            break;
-            machine1[1] = machine1[1] +(machine7[8] * prodPrice[0]) + (machine7[9] * prodPrice[1]) + (machine7[10] * prodPrice[1]);
-
->>>>>>> FETCH_HEAD
 
 
-<<<<<<< HEAD
     }
     
     machine2[1]=machine1[1];
@@ -211,8 +180,6 @@
     machine5[1]=machine1[1];
     machine6[1]=machine1[1];
     machine7[1]=machine1[1];
-=======
->>>>>>> FETCH_HEAD
     
     for (int x =8; x<11; x++)
     {
@@ -664,10 +631,6 @@
     encodedStringFinal = [encodedStringFinal stringByAppendingString:encodedString6];
     encodedStringFinal = [encodedStringFinal stringByAppendingString:@"/"];
     encodedStringFinal = [encodedStringFinal stringByAppendingString:encodedString7];
-<<<<<<< HEAD
-=======
-    NSLog(encodedStringFinal);
->>>>>>> FETCH_HEAD
     [self sendMyMessage:encodedStringFinal];
 }
 
@@ -771,59 +734,37 @@
 
 - (IBAction)verDetalle1:(id)sender {
     numMachine =1;
-<<<<<<< HEAD
     [self performSegueWithIdentifier: @"adminAMaquina" sender: self];
-=======
-    
->>>>>>> FETCH_HEAD
 }
 
 - (IBAction)verDetalle2:(id)sender {
     numMachine =2;
-<<<<<<< HEAD
     [self performSegueWithIdentifier: @"adminAMaquina" sender: self];
-=======
->>>>>>> FETCH_HEAD
 }
 
 - (IBAction)verDetalle3:(id)sender {
     numMachine =3;
-<<<<<<< HEAD
     [self performSegueWithIdentifier: @"adminAMaquina" sender: self];
-=======
->>>>>>> FETCH_HEAD
 }
 
 - (IBAction)verDetalle4:(id)sender {
     numMachine =4;
-<<<<<<< HEAD
     [self performSegueWithIdentifier: @"adminAMaquina" sender: self];
-=======
->>>>>>> FETCH_HEAD
 }
 
 - (IBAction)verDetalle5:(id)sender {
     numMachine =5;
-<<<<<<< HEAD
     [self performSegueWithIdentifier: @"adminAMaquina" sender: self];
-=======
->>>>>>> FETCH_HEAD
 }
 
 - (IBAction)verDetalle6:(id)sender {
     numMachine =6;
-<<<<<<< HEAD
     [self performSegueWithIdentifier: @"adminAMaquina" sender: self];
-=======
->>>>>>> FETCH_HEAD
 }
 
 - (IBAction)verDetalle7:(id)sender {
     numMachine =7;
-<<<<<<< HEAD
     [self performSegueWithIdentifier: @"adminAMaquina" sender: self];
-=======
->>>>>>> FETCH_HEAD
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
