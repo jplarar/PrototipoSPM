@@ -42,8 +42,8 @@ int numMachine;
     // Do any additional setup after loading the view.
     
     ENTRA = true;
+
     
-    numMachine = 2;
     
     [self.nameTF setDelegate:self];
     
@@ -153,9 +153,9 @@ int numMachine;
     
     NSData *receivedData = [[notification userInfo] objectForKey:@"data"];
     NSString *receivedText = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
-    
-    numMachine = 1;
-    NSLog(@"HOLA");
+    //Seteo de variable NumMachine en base a receivedText
+    numMachine = [receivedText intValue];
+
     //[self performSegueWithIdentifier:@"IniciarJuego" sender:self];
     dispatch_async(dispatch_get_main_queue(), ^(void) {
         [self performSegueWithIdentifier: @"IniciarJuego" sender: self];

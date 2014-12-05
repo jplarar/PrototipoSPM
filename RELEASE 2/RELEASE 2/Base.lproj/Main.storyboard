@@ -236,8 +236,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tiempo restante" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" useAutomaticPreferredMaxLayoutWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B7A-Dx-AZt">
-                                <rect key="frame" x="185" y="101" width="243" height="54"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tiempo transcurrido" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" useAutomaticPreferredMaxLayoutWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B7A-Dx-AZt">
+                                <rect key="frame" x="185" y="101" width="267" height="54"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -248,24 +248,12 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Encendido" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" useAutomaticPreferredMaxLayoutWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qf0-II-Q7M">
-                                <rect key="frame" x="780" y="324" width="108" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Material:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" useAutomaticPreferredMaxLayoutWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pzv-4r-gwX">
                                 <rect key="frame" x="154" y="530" width="141" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WYV-KY-Pq4">
-                                <rect key="frame" x="727" y="319" width="200" height="200"/>
-                                <state key="normal" image="power.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tiempo de ajuste:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" useAutomaticPreferredMaxLayoutWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V7Y-GI-WH9">
                                 <rect key="frame" x="668" y="542" width="320" height="43"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -293,7 +281,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" useAutomaticPreferredMaxLayoutWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TQA-6K-R2G">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" useAutomaticPreferredMaxLayoutWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TQA-6K-R2G">
                                 <rect key="frame" x="248" y="378" width="116" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -347,19 +335,32 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sin conexión" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" useAutomaticPreferredMaxLayoutWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9fd-uW-8pA">
+                                <rect key="frame" x="761" y="324" width="100" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="power.png" translatesAutoresizingMaskIntoConstraints="NO" id="vuJ-7r-e35">
+                                <rect key="frame" x="758" y="373" width="106" height="100"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="KyG-Sa-ajl"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
+                        <outlet property="ciruclo" destination="De4-Oi-CdF" id="ai7-VR-Vjp"/>
+                        <outlet property="cuadrado" destination="thy-N9-K3R" id="We7-my-HB3"/>
                         <outlet property="dineroLabel" destination="r1Q-pU-tvZ" id="MsH-eo-c85"/>
-                        <outlet property="estadoMaquina" destination="WYV-KY-Pq4" id="MRk-s4-3oS"/>
+                        <outlet property="estadoMaquina" destination="vuJ-7r-e35" id="Frr-aU-I1I"/>
+                        <outlet property="estadoMaquinaLabel" destination="9fd-uW-8pA" id="CR8-0A-ARY"/>
                         <outlet property="minutosAjusteLabel" destination="FAX-mL-AVP" id="BgA-FX-CUp"/>
                         <outlet property="minutosTotalLabel" destination="uFs-RR-iFf" id="lY3-Zp-gbZ"/>
                         <outlet property="numeroMaquinaLabel" destination="TQA-6K-R2G" id="42v-fm-rb1"/>
                         <outlet property="segundosAjusteLabel" destination="49L-NM-59d" id="l2W-1F-Ywb"/>
                         <outlet property="segundosTotalLabel" destination="zWP-fk-rex" id="q4T-dk-Wug"/>
+                        <outlet property="triangulo" destination="xig-1P-1Yw" id="10C-G6-44l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uDQ-R3-lnf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -499,32 +500,32 @@
                             <tableViewSection id="GDZ-Wg-btf">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="100" id="5Lv-aE-y7C">
-                                        <rect key="frame" x="0.0" y="64" width="1024" height="145"/>
+                                        <rect key="frame" x="0.0" y="64" width="1024" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Lv-aE-y7C" id="c8p-Jg-L8h">
-                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="144"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Maquina:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" useAutomaticPreferredMaxLayoutWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aeV-LZ-Ja0">
-                                                    <rect key="frame" x="178" y="30" width="150" height="46"/>
+                                                    <rect key="frame" x="178" y="16" width="150" height="46"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Material actual:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" useAutomaticPreferredMaxLayoutWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8kf-wF-AT9">
-                                                    <rect key="frame" x="457" y="29" width="200" height="46"/>
+                                                    <rect key="frame" x="429" y="15" width="228" height="46"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUE-mk-eVW">
-                                                    <rect key="frame" x="842" y="22" width="174" height="51"/>
+                                                    <rect key="frame" x="842" y="11" width="174" height="51"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                     <state key="normal" title="Ver Detalles">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="cwp-0Z-WW2" kind="push" identifier="adminAMaquina" id="L4u-FS-Ayd"/>
+                                                        <action selector="verDetalle1:" destination="z1h-Mh-6AX" eventType="touchUpInside" id="aB3-Pa-PoY"/>
                                                     </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GPf-cr-IWr">
@@ -534,7 +535,7 @@
                                                     <rect key="frame" x="681" y="0.0" width="100" height="100"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" useAutomaticPreferredMaxLayoutWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zy4-6X-p70">
-                                                    <rect key="frame" x="341" y="30" width="63" height="46"/>
+                                                    <rect key="frame" x="341" y="16" width="63" height="46"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -543,36 +544,39 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="100" id="fi0-6m-5HN">
-                                        <rect key="frame" x="0.0" y="64" width="1024" height="145"/>
+                                        <rect key="frame" x="0.0" y="164" width="1024" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fi0-6m-5HN" id="las-yZ-gCA">
-                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="144"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Maquina:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" useAutomaticPreferredMaxLayoutWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yku-Bo-nA9">
-                                                    <rect key="frame" x="178" y="30" width="150" height="46"/>
+                                                    <rect key="frame" x="178" y="16" width="150" height="46"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" useAutomaticPreferredMaxLayoutWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M9P-V7-abC">
-                                                    <rect key="frame" x="341" y="31" width="63" height="46"/>
+                                                    <rect key="frame" x="341" y="16" width="63" height="46"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Material actual:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" useAutomaticPreferredMaxLayoutWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YTi-0K-6iP">
-                                                    <rect key="frame" x="457" y="29" width="200" height="46"/>
+                                                    <rect key="frame" x="431" y="14" width="226" height="46"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E9W-ll-8Jp">
-                                                    <rect key="frame" x="842" y="22" width="174" height="51"/>
+                                                    <rect key="frame" x="842" y="11" width="174" height="51"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                     <state key="normal" title="Ver Detalles">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="verDetalle2:" destination="z1h-Mh-6AX" eventType="touchUpInside" id="ypG-W9-Bu2"/>
+                                                    </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="28Y-sA-qAh">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -584,36 +588,39 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="100" id="gRN-v4-uUB">
-                                        <rect key="frame" x="0.0" y="64" width="1024" height="145"/>
+                                        <rect key="frame" x="0.0" y="264" width="1024" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gRN-v4-uUB" id="2ed-3e-t2d">
-                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="144"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Maquina:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" useAutomaticPreferredMaxLayoutWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1nO-TD-1nM">
-                                                    <rect key="frame" x="178" y="30" width="150" height="46"/>
+                                                    <rect key="frame" x="178" y="16" width="150" height="46"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" useAutomaticPreferredMaxLayoutWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="etB-4g-WAB">
-                                                    <rect key="frame" x="341" y="31" width="63" height="46"/>
+                                                    <rect key="frame" x="341" y="16" width="63" height="46"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Material actual:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" useAutomaticPreferredMaxLayoutWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qqw-la-LLr">
-                                                    <rect key="frame" x="457" y="29" width="200" height="46"/>
+                                                    <rect key="frame" x="430" y="15" width="227" height="46"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9LA-Ny-COU">
-                                                    <rect key="frame" x="842" y="22" width="174" height="51"/>
+                                                    <rect key="frame" x="842" y="11" width="174" height="51"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                     <state key="normal" title="Ver Detalles">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="verDetalle3:" destination="z1h-Mh-6AX" eventType="touchUpInside" id="Gj8-1h-CMb"/>
+                                                    </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k8s-UQ-Wn7">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -625,36 +632,39 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="100" id="LN4-Te-MAa">
-                                        <rect key="frame" x="0.0" y="64" width="1024" height="145"/>
+                                        <rect key="frame" x="0.0" y="364" width="1024" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LN4-Te-MAa" id="Gg9-YK-0ND">
-                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="144"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Maquina:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" useAutomaticPreferredMaxLayoutWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bq2-f6-iEz">
-                                                    <rect key="frame" x="178" y="30" width="150" height="46"/>
+                                                    <rect key="frame" x="178" y="16" width="150" height="46"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" useAutomaticPreferredMaxLayoutWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HNz-iS-82u">
-                                                    <rect key="frame" x="341" y="31" width="63" height="46"/>
+                                                    <rect key="frame" x="341" y="16" width="63" height="46"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Material actual:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" useAutomaticPreferredMaxLayoutWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m4D-WJ-uBR">
-                                                    <rect key="frame" x="457" y="29" width="200" height="46"/>
+                                                    <rect key="frame" x="429" y="15" width="228" height="46"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nru-Ss-Yas">
-                                                    <rect key="frame" x="842" y="22" width="174" height="51"/>
+                                                    <rect key="frame" x="842" y="11" width="174" height="51"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                     <state key="normal" title="Ver Detalles">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="verDetalle4:" destination="z1h-Mh-6AX" eventType="touchUpInside" id="5jp-sl-6E6"/>
+                                                    </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nam-97-8Qy">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -666,36 +676,39 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="100" id="NAc-7f-gpF">
-                                        <rect key="frame" x="0.0" y="64" width="1024" height="145"/>
+                                        <rect key="frame" x="0.0" y="464" width="1024" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NAc-7f-gpF" id="nZC-Od-wXs">
-                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="144"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Maquina:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" useAutomaticPreferredMaxLayoutWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Qy-BX-4Dy">
-                                                    <rect key="frame" x="178" y="30" width="150" height="46"/>
+                                                    <rect key="frame" x="178" y="16" width="150" height="46"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" useAutomaticPreferredMaxLayoutWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VeD-aZ-HDw">
-                                                    <rect key="frame" x="341" y="31" width="63" height="46"/>
+                                                    <rect key="frame" x="341" y="16" width="63" height="46"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Material actual:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" useAutomaticPreferredMaxLayoutWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="byC-lS-xvz">
-                                                    <rect key="frame" x="457" y="29" width="200" height="46"/>
+                                                    <rect key="frame" x="434" y="15" width="223" height="46"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CVf-GR-LSS">
-                                                    <rect key="frame" x="842" y="22" width="174" height="51"/>
+                                                    <rect key="frame" x="842" y="11" width="174" height="51"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                     <state key="normal" title="Ver Detalles">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="verDetalle5:" destination="z1h-Mh-6AX" eventType="touchUpInside" id="JPo-bp-zNh"/>
+                                                    </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rhr-iz-iLX">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -707,36 +720,39 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="100" id="9Ij-qK-fM9">
-                                        <rect key="frame" x="0.0" y="64" width="1024" height="145"/>
+                                        <rect key="frame" x="0.0" y="564" width="1024" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9Ij-qK-fM9" id="X52-eU-LFL">
-                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="144"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Maquina:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" useAutomaticPreferredMaxLayoutWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RAc-n8-SYN">
-                                                    <rect key="frame" x="178" y="30" width="150" height="46"/>
+                                                    <rect key="frame" x="178" y="16" width="150" height="46"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="6" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" useAutomaticPreferredMaxLayoutWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SSF-m2-efO">
-                                                    <rect key="frame" x="341" y="31" width="63" height="46"/>
+                                                    <rect key="frame" x="341" y="16" width="63" height="46"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Material actual:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" useAutomaticPreferredMaxLayoutWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dEe-F5-jsm">
-                                                    <rect key="frame" x="457" y="29" width="200" height="46"/>
+                                                    <rect key="frame" x="431" y="15" width="226" height="46"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wSA-x0-SOV">
-                                                    <rect key="frame" x="842" y="22" width="174" height="51"/>
+                                                    <rect key="frame" x="842" y="11" width="174" height="51"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                     <state key="normal" title="Ver Detalles">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="verDetalle6:" destination="z1h-Mh-6AX" eventType="touchUpInside" id="gIx-Gi-fhH"/>
+                                                    </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dS3-46-fBt">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -748,36 +764,39 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="100" id="Pxy-jb-PjE">
-                                        <rect key="frame" x="0.0" y="64" width="1024" height="145"/>
+                                        <rect key="frame" x="0.0" y="664" width="1024" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Pxy-jb-PjE" id="76e-1C-orw">
-                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="144"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1024" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Maquina:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" useAutomaticPreferredMaxLayoutWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pdU-Jv-1ab">
-                                                    <rect key="frame" x="178" y="30" width="150" height="46"/>
+                                                    <rect key="frame" x="178" y="16" width="150" height="46"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="7" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" useAutomaticPreferredMaxLayoutWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Po-rC-fXV">
-                                                    <rect key="frame" x="341" y="31" width="63" height="46"/>
+                                                    <rect key="frame" x="341" y="16" width="63" height="46"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Material actual:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" useAutomaticPreferredMaxLayoutWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IFI-uD-vEl">
-                                                    <rect key="frame" x="457" y="29" width="200" height="46"/>
+                                                    <rect key="frame" x="435" y="15" width="222" height="46"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pkg-5i-adA">
-                                                    <rect key="frame" x="842" y="22" width="174" height="51"/>
+                                                    <rect key="frame" x="842" y="11" width="174" height="51"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                     <state key="normal" title="Ver Detalles">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="verDetalle7:" destination="z1h-Mh-6AX" eventType="touchUpInside" id="YI5-fh-rg8"/>
+                                                    </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SFV-J4-9wm">
                                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -820,11 +839,12 @@
                         <outlet property="materialMaquina5" destination="FtK-pg-dtn" id="fed-BT-O6y"/>
                         <outlet property="materialMaquina6" destination="8NX-Ou-hKP" id="Ttw-yf-FVa"/>
                         <outlet property="materialMaquina7" destination="u0X-XO-FJE" id="DnG-5s-Q4X"/>
+                        <segue destination="cwp-0Z-WW2" kind="push" identifier="adminAMaquina" id="R0M-cO-H7m"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P3O-mA-NcX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3947" y="150"/>
+            <point key="canvasLocation" x="4082" y="134"/>
         </scene>
         <!--Machine View Controller-->
         <scene sceneID="d2Q-bd-PHf">
@@ -1087,6 +1107,9 @@
                     <navigationItem key="navigationItem" id="SZ9-Xi-ZJK"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <connections>
+                        <outlet property="agregarCirculo" destination="sof-Dv-reU" id="L11-6a-Wgu"/>
+                        <outlet property="agregarCuadrado" destination="77f-l5-c8K" id="2kz-m9-6Zd"/>
+                        <outlet property="agregarTriangulo" destination="uvV-3d-YGJ" id="5LE-fP-WVY"/>
                         <outlet property="circle" destination="Qkm-Uz-BnU" id="EII-5P-Ddu"/>
                         <outlet property="dineroLabel" destination="dXq-Zc-RTJ" id="D8x-dn-UGf"/>
                         <outlet property="entradaCirculoLabel" destination="NxL-Za-e2Q" id="1W5-g9-mBO"/>

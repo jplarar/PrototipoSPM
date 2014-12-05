@@ -31,6 +31,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *triangle;
 @property (strong, nonatomic) IBOutlet UIButton *power;
 
+@property (strong, nonatomic) IBOutlet UIButton *agregarCirculo;
+@property (strong, nonatomic) IBOutlet UIButton *agregarCuadrado;
+@property (strong, nonatomic) IBOutlet UIButton *agregarTriangulo;
 
 //imagenes botones
 - (IBAction)selectCirculoButton:(id)sender;

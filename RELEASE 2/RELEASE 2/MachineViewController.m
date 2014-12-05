@@ -159,16 +159,20 @@
         }
     }
     
+    //Deshabilitar compra de materiales si no es la maquina1
+    if (numMachine >1)
+    {
+        self.agregarCirculo.hidden = YES;
+        self.agregarCuadrado.hidden = YES;
+        self.agregarTriangulo.hidden = YES;
+    }
+    
     contadorProd = 0;
     [self createTimer];
 
 }
 
--(void)viewDidAppear:(BOOL)animated{
-    
-   
-    
-}
+
 
 -(NSString *)convertIntTimeToStringTime: (int) intTime
 {
@@ -231,14 +235,18 @@
     
     myInfo[0] = [myReceivedInfo[0] intValue];
     myInfo[1] = [myReceivedInfo[1] intValue];
+    self.dineroLabel.text = [@(myInfo[1]) stringValue];
+
     if(numMachine >1)
     {
         myInfo[5] = [myReceivedInfo[5] intValue];
+        self.entradaCirculoLabel.text = [@(myInfo[5]) stringValue];
         myInfo[6] = [myReceivedInfo[6] intValue];
+        self.entradaCuadradoLabel.text = [@(myInfo[6]) stringValue];
         myInfo[7] = [myReceivedInfo[7] intValue];
+        self.entradaTrianguloLabel.text = [@(myInfo[7]) stringValue];
 
     }
-    
 
 
     [self update];
@@ -511,8 +519,10 @@ self.entradaTrianguloLabel.text = [@(myInfo[7]) stringValue];
     NSData *receivedData = [[notification userInfo] objectForKey:@"data"];
     NSString *receivedText = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
     
+    if([[receivedText componentsSeparatedByString:@"/"] count] > 1) {
+        [self decodeStringReceived:receivedText];
+    }
     
-    [self decodeStringReceived:receivedText];
     
 }
 

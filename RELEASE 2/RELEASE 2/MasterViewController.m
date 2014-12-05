@@ -27,6 +27,7 @@
     //Inicializar precios de cada material
     int prodPrice[3];
     
+    int numMachine;
 }
     
 @property (nonatomic, strong) AppDelegate *appDelegate;
@@ -53,6 +54,21 @@
 
     }
     [self playAll];
+    machine1[0] =1;
+    machine2[0] =1;
+    machine3[0] =1;
+    machine4[0] =1;
+    machine5[0] =1;
+    machine6[0] =1;
+    machine7[0] =1;
+    
+    machine1[1] =100000;
+    machine2[1] =100000;
+    machine3[1] =100000;
+    machine4[1] =100000;
+    machine5[1] =100000;
+    machine6[1] =100000;
+    machine7[1] =100000;
 }
 
 -(void)decodeStringReceived:(NSString *)receivedInfo
@@ -81,70 +97,90 @@
     
     switch (receivedInfoInt[2]) {
         case 1:
-            for (int x =0; x<11; x++)
+            for (int x =1; x<11; x++)
             {
                 machine1[x] =receivedInfoInt[x];
             }
-            break;
-        case 2:
-            for (int x =0; x<11; x++)
-            {
-                machine2[x] =receivedInfoInt[x];
-            }
+            //Actualizar los materiales de entrada de la maquina siguiente con los materiales de salida de la maquina actual
             machine2[5] =machine1[8];
             machine2[6] =machine1[9];
             machine2[7] =machine1[10];
+            //Actualiza dinero de todas las maquinas
+            machine2[1]=machine1[1];
+            machine3[1]=machine1[1];
+            machine4[1]=machine1[1];
+            machine5[1]=machine1[1];
+            machine6[1]=machine1[1];
+            machine7[1]=machine1[1];
             break;
-        case 3:
-            for (int x =0; x<11; x++)
+        case 2:
+            for (int x =1; x<11; x++)
             {
-                machine3[x] =receivedInfoInt[x];
+                machine2[x] =receivedInfoInt[x];
             }
+            //Actualizar los materiales de entrada de la maquina siguiente con los materiales de salida de la maquina actual
             machine3[5] =machine2[8];
             machine3[6] =machine2[9];
             machine3[7] =machine2[10];
             break;
-        case 4:
-            for (int x =0; x<11; x++)
+        case 3:
+            for (int x =1; x<11; x++)
             {
-                machine4[x] =receivedInfoInt[x];
+                machine3[x] =receivedInfoInt[x];
             }
+            //Actualizar los materiales de entrada de la maquina siguiente con los materiales de salida de la maquina actual
             machine4[5] =machine3[8];
             machine4[6] =machine3[9];
             machine4[7] =machine3[10];
             break;
-        case 5:
-            for (int x =0; x<11; x++)
+        case 4:
+            for (int x =1; x<11; x++)
             {
-                machine5[x] =receivedInfoInt[x];
+                machine4[x] =receivedInfoInt[x];
             }
+            //Actualizar los materiales de entrada de la maquina siguiente con los materiales de salida de la maquina actual
             machine5[5] =machine4[8];
             machine5[6] =machine4[9];
             machine5[7] =machine4[10];
             break;
-        case 6:
-            for (int x =0; x<11; x++)
+        case 5:
+            for (int x =1; x<11; x++)
             {
-                machine6[x] =receivedInfoInt[x];
+                machine5[x] =receivedInfoInt[x];
             }
+            //Actualizar los materiales de entrada de la maquina siguiente con los materiales de salida de la maquina actual
             machine6[5] =machine5[8];
             machine6[6] =machine5[9];
             machine6[7] =machine5[10];
             break;
-        case 7:
-            for (int x =0; x<11; x++)
+        case 6:
+            for (int x =1; x<11; x++)
             {
-                machine7[x] =receivedInfoInt[x];
+                machine6[x] =receivedInfoInt[x];
             }
+            //Actualizar los materiales de entrada de la maquina siguiente con los materiales de salida de la maquina actual
             machine7[5] =machine6[8];
             machine7[6] =machine6[9];
             machine7[7] =machine6[10];
             break;
+        case 7:
+            for (int x =1; x<11; x++)
+            {
+                machine7[x] =receivedInfoInt[x];
+            }
+            machine1[1] = machine1[1] +(machine7[8] * prodPrice[0]) + (machine7[9] * prodPrice[1]) + (machine7[10] * prodPrice[1]);
+            break;
+
 
     }
-
-    machine1[1] = machine1[1] +(machine7[8] * prodPrice[0]) + (machine7[9] * prodPrice[1]) + (machine7[10] * prodPrice[1]);
-        
+    
+    machine2[1]=machine1[1];
+    machine3[1]=machine1[1];
+    machine4[1]=machine1[1];
+    machine5[1]=machine1[1];
+    machine6[1]=machine1[1];
+    machine7[1]=machine1[1];
+    
     for (int x =8; x<11; x++)
     {
         machine1[x] =0;
@@ -210,6 +246,7 @@
     [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateMachines:) userInfo:nil repeats:YES];
     
     [self createTimer];
+    numMachine =0;
     
 }
 
@@ -289,7 +326,6 @@
 }
 
 - (void)updateMachines:(NSTimer*)timer {
-    NSLog(@"%d",machine1[4]);
 
     /*
      Pos0 = @"state" 1=Play; 2=Pause; 3=Stop,
@@ -306,18 +342,16 @@
      */
 
     if(machine1[4] == 1) {
-        NSLog(@"si entrooooo");
+
         self.estadoMaquina1.image = [UIImage imageNamed:@"powerRed.png"];
 
     }
     else if (machine1[4] == 2) {
-        NSLog(@"si entrooooo");
 
         self.estadoMaquina1.image = [UIImage imageNamed:@"powerGreen.png"];
 
     }
     else if (machine1[4] == 3) {
-        NSLog(@"si entrooooo");
 
         self.estadoMaquina1.image = [UIImage imageNamed:@"powerYellow.png"];
         
@@ -597,7 +631,6 @@
     encodedStringFinal = [encodedStringFinal stringByAppendingString:encodedString6];
     encodedStringFinal = [encodedStringFinal stringByAppendingString:@"/"];
     encodedStringFinal = [encodedStringFinal stringByAppendingString:encodedString7];
-
     [self sendMyMessage:encodedStringFinal];
 }
 
@@ -697,6 +730,51 @@
     machine7[0] =3;
     
     
+}
+
+- (IBAction)verDetalle1:(id)sender {
+    numMachine =1;
+    [self performSegueWithIdentifier: @"adminAMaquina" sender: self];
+}
+
+- (IBAction)verDetalle2:(id)sender {
+    numMachine =2;
+    [self performSegueWithIdentifier: @"adminAMaquina" sender: self];
+}
+
+- (IBAction)verDetalle3:(id)sender {
+    numMachine =3;
+    [self performSegueWithIdentifier: @"adminAMaquina" sender: self];
+}
+
+- (IBAction)verDetalle4:(id)sender {
+    numMachine =4;
+    [self performSegueWithIdentifier: @"adminAMaquina" sender: self];
+}
+
+- (IBAction)verDetalle5:(id)sender {
+    numMachine =5;
+    [self performSegueWithIdentifier: @"adminAMaquina" sender: self];
+}
+
+- (IBAction)verDetalle6:(id)sender {
+    numMachine =6;
+    [self performSegueWithIdentifier: @"adminAMaquina" sender: self];
+}
+
+- (IBAction)verDetalle7:(id)sender {
+    numMachine =7;
+    [self performSegueWithIdentifier: @"adminAMaquina" sender: self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"adminAMaquina"]) {
+        
+        NSDictionary *toDetail = [[NSDictionary alloc] initWithObjectsAndKeys:[@(numMachine) stringValue],@"numMachine",[@(minutosInt) stringValue], @"minutosInt",[@(segundosInt) stringValue],@"segundosInt", nil];
+        [[segue destinationViewController] setDatos:toDetail];
+
+    }
 }
 
 
