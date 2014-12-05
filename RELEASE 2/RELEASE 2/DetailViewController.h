@@ -13,8 +13,13 @@
 @property (strong, nonatomic) IBOutlet UILabel *segundosTotalLabel;
 @property (strong, nonatomic) IBOutlet UILabel *numeroMaquinaLabel;
 @property (strong, nonatomic) IBOutlet UILabel *dineroLabel;
+<<<<<<< HEAD
 @property (strong, nonatomic) IBOutlet UILabel *estadoMaquinaLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *estadoMaquina;
+=======
+@property (strong, nonatomic) IBOutlet UIButton *estadoMaquina;
+@property (strong, nonatomic) IBOutlet UILabel *estadoMaquinaLabel;
+>>>>>>> FETCH_HEAD
 
 @property (strong, nonatomic) IBOutlet UILabel *minutosAjusteLabel;
 @property (strong, nonatomic) IBOutlet UILabel *segundosAjusteLabel;

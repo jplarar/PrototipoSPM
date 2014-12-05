@@ -35,7 +35,48 @@
 
 @implementation DetailViewController
 
+<<<<<<< HEAD
 
+=======
+- (NSTimer*)createTimer {
+    // create timer on run loop
+    return [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerTicked:) userInfo:nil repeats:YES];
+    
+}
+
+- (void)timerTicked:(NSTimer*)timer {
+    if (machine1[0] == 1) {
+        segundosInt ++;
+        
+        if (segundosInt >= 60) {
+            segundosInt = 0;
+            minutosInt ++;
+        }
+        if (segundosInt <= 9)
+            self.segundosTotalLabel.text = [NSString stringWithFormat: @"0%d", segundosInt];
+        else
+            self.segundosTotalLabel.text = [@(segundosInt) stringValue];
+        if (minutosInt <= 9)
+            self.minutosTotalLabel.text = [NSString stringWithFormat: @"0%d", minutosInt];
+        else
+            self.minutosTotalLabel.text = [@ (minutosInt) stringValue];
+
+    }
+}
+
+-(void)didReceiveDataWithNotification:(NSNotification *)notification
+{
+
+    MCPeerID *peerID = [[notification userInfo] objectForKey:@"peerID"];
+    NSString *peerDisplayName = peerID.displayName;
+    
+    NSData *receivedData = [[notification userInfo] objectForKey:@"data"];
+    NSString *receivedText = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
+    
+    [self decodeStringReceived:receivedText];
+
+}
+>>>>>>> FETCH_HEAD
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -45,7 +86,11 @@
     _appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
+<<<<<<< HEAD
                                              selector:@selector(didReceiveDataWithNotification2:)
+=======
+                                             selector:@selector(didReceiveDataWithNotification:)
+>>>>>>> FETCH_HEAD
                                                  name:@"MCDidReceiveDataNotification"
                                                object:nil];
     
@@ -72,6 +117,7 @@
         machine7[x] =0;
         
     }
+<<<<<<< HEAD
 }
 
 - (NSTimer*)createTimer {
@@ -111,6 +157,8 @@
     
     [self decodeStringReceived:receivedText];
     
+=======
+>>>>>>> FETCH_HEAD
 }
 
 - (void)didReceiveMemoryWarning {
@@ -140,6 +188,11 @@
     
     for (int x=0; x < 11; x++)
         receivedInfoInt[x] = [myReceivedInfo[x] intValue];
+<<<<<<< HEAD
+=======
+    
+    
+>>>>>>> FETCH_HEAD
     switch (receivedInfoInt[2]) {
         case 1:
             for (int x =0; x<11; x++)
@@ -205,6 +258,7 @@
      Pos9 =@"materialOutCuadrado2",
      Pos10 =@"materialOutTriangulo3",
      */
+<<<<<<< HEAD
     self.numMachine = [[self.datos valueForKey:@"numMachine"] intValue];
     switch (self.numMachine) {
         case 1: {
@@ -681,6 +735,28 @@
             break;
             
         }
+=======
+    switch (self.numMachine) {
+        case 1:
+            self.dineroLabel.text = [@(machine1[1]) stringValue];
+            if (machine1[4]==1)
+            {
+                [self.estadoMaquina setImage:[UIImage imageNamed:@"powerGreen.png"] forState:UIControlStateNormal ];
+                self.estadoMaquinaLabel.text =@"Encendida";
+            }
+            else if (machine1[4]==2){
+                [self.estadoMaquina setImage:[UIImage imageNamed:@"powerRed.png"] forState:UIControlStateNormal ];
+                 self.estadoMaquinaLabel.text =@"Apagada";
+            }
+            else if (machine1[4]==3){
+                [self.estadoMaquina setImage:[UIImage imageNamed:@"powerYellow.png"] forState:UIControlStateNormal ];
+                 self.estadoMaquinaLabel.text =@"Ajustando";
+            }
+
+            self.minutosAjusteLabel.text = @"00";
+            self.segundosAjusteLabel.text = @"00";
+            break;
+>>>>>>> FETCH_HEAD
 
             
             

@@ -236,7 +236,10 @@
     myInfo[0] = [myReceivedInfo[0] intValue];
     myInfo[1] = [myReceivedInfo[1] intValue];
     self.dineroLabel.text = [@(myInfo[1]) stringValue];
+<<<<<<< HEAD
 
+=======
+>>>>>>> FETCH_HEAD
     if(numMachine >1)
     {
         myInfo[5] = [myReceivedInfo[5] intValue];
