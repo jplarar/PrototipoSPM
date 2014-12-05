@@ -1,9 +1,45 @@
 //
-//  MachineViewController.m
-//  RELEASE 2
+//  MCManager.h
+//  Prototipo para simulador de procesos de manufactura
+//  Juan Paulo Lara, Manuel Calzado y Andrés López De León
 //
-//  Created by alumno on 26/11/14.
-//  Copyright (c) 2014 JuanPauloLara. All rights reserved.
+//  Fecha de creación: 10/24/14
+//  Fecha de última actualización: 11/17/14
+//  Descripción general: Archivo que se encarga de manejar las conexiones
+//  a traves de multipeer connectivity
+//
+//  Copyright (c) 2014 ITESM. All rights reserved.
+//
+//  This file is part of "Prototipo para simulador de procesos de manufactura".
+//
+//  "Prototipo para simulador de procesos de manufactura" is free software:
+//  you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  "Prototipo para simulador de procesos de manufactura" is distributed in
+//  the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+//
+// Code retrived from Gabriel Theodoropoulos tutorial
+// <http://www.appcoda.com/intro-multipeer-connectivity-framework-ios-programming/>
+//
+//  Authors:
+//
+//  ITESM representatives
+//  Ing. Martha Sordia Salinas  <msordia@itesm.mx>
+//  Ing. Mario de la Fuente     <mario.delafuente@itesm.mx>
+//
+//  ITESM students
+//  Juan Paulo Lara Rodríguez   <jplarar@gmail.com>
+//  Manuel Calzado              <mcm_maycod@hotmail.com>
+//  Andrés López De León        <agldeleon@gmail.com>
 //
 
 #import "MachineViewController.h"
@@ -201,7 +237,8 @@
 }
 
 - (void)timerTicked:(NSTimer*)timer {
-    [self sendMyMessage];
+    
+    
     if (myInfo[0] == 3){
         dispatch_async(dispatch_get_main_queue(), ^(void) {
             [self performSegueWithIdentifier: @"finJuego" sender: self];
@@ -224,6 +261,11 @@
         else
             self.minutosTotalLabel.text = [@ (minutos) stringValue];
     }
+    [self sendMyMessage];
+    
+    myInfo[8] = 0;
+    myInfo[9] = 0;
+    myInfo[10] = 0;
 }
 
 
@@ -235,22 +277,36 @@
     
     myInfo[0] = [myReceivedInfo[0] intValue];
     myInfo[1] = [myReceivedInfo[1] intValue];
-    self.dineroLabel.text = [@(myInfo[1]) stringValue];
+    self.updateDineroLabel = [@(myInfo[1]) stringValue];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.dineroLabel.text = self.updateDineroLabel;
+    });
 
     if(numMachine >1)
     {
+
         myInfo[5] = [myReceivedInfo[5] intValue];
-        self.entradaCirculoLabel.text = [@(myInfo[5]) stringValue];
+        self.updateCirculoLabel = [@(myInfo[5]) stringValue];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.entradaCirculoLabel.text = self.updateCirculoLabel;
+        });
+        
         myInfo[6] = [myReceivedInfo[6] intValue];
-        self.entradaCuadradoLabel.text = [@(myInfo[6]) stringValue];
+        self.updateCuadradoLabel = [@(myInfo[6]) stringValue];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.entradaCuadradoLabel.text = self.updateCuadradoLabel;
+        });
+        
         myInfo[7] = [myReceivedInfo[7] intValue];
-        self.entradaTrianguloLabel.text = [@(myInfo[7]) stringValue];
+        self.updateTrianguloLabel = [@(myInfo[7]) stringValue];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.entradaTrianguloLabel.text = self.updateTrianguloLabel;
+        });
 
     }
-
-
-    [self update];
     
+    
+
     
 }
 -(NSString *)encodeStringToSend
@@ -268,29 +324,7 @@
     return encodedString;
 }
 
--(void)update
-{
-/*
- Pos0 = @"state" 1=Play; 2=Pause; 3=Stop,
- Pos1 =@"money",
- Pos2 =@"machine",
- Pos3 =@"currentMaterial" 1=Circulo; 2=Cuadrado; 3=Triangulo,
- Pos4 =@"power" 1=Off; 2=On; 3=Adjusting,
- Pos5 =@"materialInCirculo1",
- Pos6 =@"materialInCuadrado2",
- Pos7 =@"materialInTriangulo3",
- Pos8 =@"materialOutCirculo1",
- Pos9 =@"materialOutCuadrado2",
- Pos10 =@"materialOutTriangulo3",
- */
 
-self.dineroLabel.text = [@(myInfo[1]) stringValue];
-self.entradaCirculoLabel.text = [@(myInfo[5]) stringValue];
-self.entradaCuadradoLabel.text = [@(myInfo[6]) stringValue];
-self.entradaTrianguloLabel.text = [@(myInfo[7]) stringValue];
-
-
-}
 - (IBAction)agregarCirculo:(id)sender
 {
     //Agregar material circulo
@@ -524,6 +558,27 @@ self.entradaTrianguloLabel.text = [@(myInfo[7]) stringValue];
     }
     
     
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSString *minutosString = [self convertIntTimeToStringTime:minutos];
+    NSString *segundosString = [self convertIntTimeToStringTime:segundos];
+    NSString *tiempo = @"";
+    tiempo = [tiempo stringByAppendingString:minutosString];
+    tiempo = [tiempo stringByAppendingString:@":"];
+    tiempo = [tiempo stringByAppendingString:segundosString];
+    
+    
+    if ([[segue identifier] isEqualToString:@"finJuego"]) {
+        
+        NSDictionary *toResults = [[NSDictionary alloc] initWithObjectsAndKeys:[@(100000) stringValue],@"presupuestoInicial",[@(myInfo[1]) stringValue], @"presupuestoFinal",[@(7) stringValue],@"participantes",[@(myInfo[8] + myInfo[9] + myInfo[10]) stringValue],@"productosProcesados",tiempo,@"tiempoTotal", nil];
+        
+        [[segue destinationViewController] setDatos:toResults];
+        
+
+        
+    }
 }
 
 /*

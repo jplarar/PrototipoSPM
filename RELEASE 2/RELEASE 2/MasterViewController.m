@@ -1,9 +1,45 @@
 //
-//  MasterViewController.m
-//  RELEASE 2
+//  MCManager.h
+//  Prototipo para simulador de procesos de manufactura
+//  Juan Paulo Lara, Manuel Calzado y Andrés López De León
 //
-//  Created by Juan Paulo Lara on 11/17/14.
-//  Copyright (c) 2014 JuanPauloLara. All rights reserved.
+//  Fecha de creación: 10/24/14
+//  Fecha de última actualización: 11/17/14
+//  Descripción general: Archivo que se encarga de manejar las conexiones
+//  a traves de multipeer connectivity
+//
+//  Copyright (c) 2014 ITESM. All rights reserved.
+//
+//  This file is part of "Prototipo para simulador de procesos de manufactura".
+//
+//  "Prototipo para simulador de procesos de manufactura" is free software:
+//  you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  "Prototipo para simulador de procesos de manufactura" is distributed in
+//  the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+//
+// Code retrived from Gabriel Theodoropoulos tutorial
+// <http://www.appcoda.com/intro-multipeer-connectivity-framework-ios-programming/>
+//
+//  Authors:
+//
+//  ITESM representatives
+//  Ing. Martha Sordia Salinas  <msordia@itesm.mx>
+//  Ing. Mario de la Fuente     <mario.delafuente@itesm.mx>
+//
+//  ITESM students
+//  Juan Paulo Lara Rodríguez   <jplarar@gmail.com>
+//  Manuel Calzado              <mcm_maycod@hotmail.com>
+//  Andrés López De León        <agldeleon@gmail.com>
 //
 
 #import "MasterViewController.h"
@@ -86,8 +122,8 @@
      Pos9 =@"materialOutCuadrado2",
      Pos10 =@"materialOutTriangulo3",
      */
-
-
+    
+    
     NSArray *myReceivedInfo= [receivedInfo componentsSeparatedByString:@"_"];
     int receivedInfoInt[11];
     
@@ -102,9 +138,9 @@
                 machine1[x] =receivedInfoInt[x];
             }
             //Actualizar los materiales de entrada de la maquina siguiente con los materiales de salida de la maquina actual
-            machine2[5] =machine1[8];
-            machine2[6] =machine1[9];
-            machine2[7] =machine1[10];
+            if (machine1[8]!=0) machine2[5] = machine2[5] + 1;
+            if (machine1[9]!=0) machine2[6] = machine2[6] + 1;
+            if (machine1[10]!=0) machine2[7] = machine2[7] + 1;
             //Actualiza dinero de todas las maquinas
             machine2[1]=machine1[1];
             machine3[1]=machine1[1];
@@ -119,9 +155,9 @@
                 machine2[x] =receivedInfoInt[x];
             }
             //Actualizar los materiales de entrada de la maquina siguiente con los materiales de salida de la maquina actual
-            machine3[5] =machine2[8];
-            machine3[6] =machine2[9];
-            machine3[7] =machine2[10];
+            if (machine2[8]!=0) machine3[5] = machine3[5] + 1;
+            if (machine2[9]!=0) machine3[6] = machine3[6] + 1;
+            if (machine2[10]!=0) machine3[7] = machine3[7] + 1;
             break;
         case 3:
             for (int x =1; x<11; x++)
@@ -129,9 +165,9 @@
                 machine3[x] =receivedInfoInt[x];
             }
             //Actualizar los materiales de entrada de la maquina siguiente con los materiales de salida de la maquina actual
-            machine4[5] =machine3[8];
-            machine4[6] =machine3[9];
-            machine4[7] =machine3[10];
+            if (machine3[8]!=0) machine4[5] = machine4[5] + 1;
+            if (machine3[9]!=0) machine4[6] = machine4[6] + 1;
+            if (machine3[10]!=0) machine4[7] = machine4[7] + 1;
             break;
         case 4:
             for (int x =1; x<11; x++)
@@ -139,9 +175,9 @@
                 machine4[x] =receivedInfoInt[x];
             }
             //Actualizar los materiales de entrada de la maquina siguiente con los materiales de salida de la maquina actual
-            machine5[5] =machine4[8];
-            machine5[6] =machine4[9];
-            machine5[7] =machine4[10];
+            if (machine4[8]!=0) machine5[5] = machine5[5] + 1;
+            if (machine4[9]!=0) machine5[6] = machine5[6] + 1;
+            if (machine4[10]!=0) machine5[7] = machine5[7] + 1;
             break;
         case 5:
             for (int x =1; x<11; x++)
@@ -149,9 +185,9 @@
                 machine5[x] =receivedInfoInt[x];
             }
             //Actualizar los materiales de entrada de la maquina siguiente con los materiales de salida de la maquina actual
-            machine6[5] =machine5[8];
-            machine6[6] =machine5[9];
-            machine6[7] =machine5[10];
+            if (machine5[8]!=0) machine6[5] = machine6[5] + 1;
+            if (machine5[9]!=0) machine6[6] = machine6[6] + 1;
+            if (machine5[10]!=0) machine6[7] = machine6[7] + 1;
             break;
         case 6:
             for (int x =1; x<11; x++)
@@ -159,19 +195,19 @@
                 machine6[x] =receivedInfoInt[x];
             }
             //Actualizar los materiales de entrada de la maquina siguiente con los materiales de salida de la maquina actual
-            machine7[5] =machine6[8];
-            machine7[6] =machine6[9];
-            machine7[7] =machine6[10];
+            if (machine6[8]!=0) machine7[5] = machine7[5] + 1;
+            if (machine6[9]!=0) machine7[6] = machine7[6] + 1;
+            if (machine6[10]!=0) machine7[7] = machine7[7] + 1;
             break;
         case 7:
             for (int x =1; x<11; x++)
             {
                 machine7[x] =receivedInfoInt[x];
             }
-            machine1[1] = machine1[1] +(machine7[8] * prodPrice[0]) + (machine7[9] * prodPrice[1]) + (machine7[10] * prodPrice[1]);
+            machine1[1] += (machine7[8] * prodPrice[0]) + (machine7[9] * prodPrice[1]) + (machine7[10] * prodPrice[1]);
             break;
-
-
+            
+            
     }
     
     machine2[1]=machine1[1];
@@ -181,16 +217,6 @@
     machine6[1]=machine1[1];
     machine7[1]=machine1[1];
     
-    for (int x =8; x<11; x++)
-    {
-        machine1[x] =0;
-        machine2[x] =0;
-        machine3[x] =0;
-        machine4[x] =0;
-        machine5[x] =0;
-        machine6[x] =0;
-        machine7[x] =0;
-    }
     
     
     
@@ -634,6 +660,7 @@
     [self sendMyMessage:encodedStringFinal];
 }
 
+
 -(void)sendMyMessage:(NSString *)stringToSend
 {
     NSData *dataToSend = [stringToSend dataUsingEncoding:NSUTF8StringEncoding];
@@ -719,8 +746,8 @@
 }
 */
 
+
 - (IBAction)stopAll:(id)sender {
-    
     machine1[0] =3;
     machine2[0] =3;
     machine3[0] =3;
@@ -730,6 +757,10 @@
     machine7[0] =3;
     
     
+    dispatch_async(dispatch_get_main_queue(), ^(void) {
+        [self encodeStringToSend];
+        [self performSegueWithIdentifier: @"VerResultados" sender: self];
+    });
 }
 
 - (IBAction)verDetalle1:(id)sender {
@@ -769,11 +800,23 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    NSString *tiempo = @"";
+    tiempo = [tiempo stringByAppendingString:minuto];
+    tiempo = [tiempo stringByAppendingString:@":"];
+    tiempo = [tiempo stringByAppendingString:segundos];
+    
     if ([[segue identifier] isEqualToString:@"adminAMaquina"]) {
         
         NSDictionary *toDetail = [[NSDictionary alloc] initWithObjectsAndKeys:[@(numMachine) stringValue],@"numMachine",[@(minutosInt) stringValue], @"minutosInt",[@(segundosInt) stringValue],@"segundosInt", nil];
         [[segue destinationViewController] setDatos:toDetail];
 
+    }
+    
+    if ([[segue identifier] isEqualToString:@"VerResultados"]) {
+        
+        NSDictionary *toResults = [[NSDictionary alloc] initWithObjectsAndKeys:[@(100000) stringValue],@"presupuestoInicial",[@(machine1[1]) stringValue], @"presupuestoFinal",[@(7) stringValue],@"participantes",[@(machine7[8] + machine7[9] + machine7[10]) stringValue],@"productosProcesados",tiempo,@"tiempoTotal", nil];
+        [[segue destinationViewController] setDatos:toResults];
+        
     }
 }
 

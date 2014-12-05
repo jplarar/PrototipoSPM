@@ -3,12 +3,10 @@
 //  Prototipo para simulador de procesos de manufactura
 //  Juan Paulo Lara, Manuel Calzado y Andrés López De León
 //
-//  RELEASE 2
-//
 //  Fecha de creación: 10/24/14
 //  Fecha de última actualización: 11/17/14
-//  Descripción general: Archivo donde se almacenan las variables a utilizar para
-//  el framework de multipeer connectivity.
+//  Descripción general: Archivo que se encarga de manejar las conexiones
+//  a traves de multipeer connectivity
 //
 //  Copyright (c) 2014 ITESM. All rights reserved.
 //
